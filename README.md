@@ -1,5 +1,8 @@
 # PRT681 2026 - Group 5 Shared Repository
+
 ## Repository Structure
+
+```text
 PRT681-2026-Group5/
 ├── business-analyst/
 │   └── <member-name-studentid>/
