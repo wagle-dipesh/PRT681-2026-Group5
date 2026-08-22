@@ -18,18 +18,33 @@ namespace Week5_TaskTracker_Console.Repositories
             using IDbConnection db = _connectionFactory.CreateConnection();
 
             var parameters = new DynamicParameters();
+            parameters.Add("@Action", "i");
             parameters.Add("@Title", task.Title);
             parameters.Add("@Description", task.Description);
             parameters.Add("@IsCompleted", task.IsCompleted);
-            parameters.Add("@Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
+            parameters.Add("@InsertedId", dbType: DbType.Int32, direction: ParameterDirection.Output);
 
             await db.ExecuteAsync(
-                "spTasks_Insert",
+                "spTasks_Manager",
                 parameters,
                 commandType: CommandType.StoredProcedure
             );
 
-            return parameters.Get<int>("@Id");
+            return parameters.Get<int>("@InsertedId");
+        }
+
+        public async Task<IEnumerable<TaskItem>> GetAllAsync()
+        {
+            using IDbConnection db = _connectionFactory.CreateConnection();
+
+            var parameters = new DynamicParameters();
+            parameters.Add("@Action", "sa");
+
+            return await db.QueryAsync<TaskItem>(
+                "spTasks_Manager",
+                parameters,
+                commandType: CommandType.StoredProcedure
+            );
         }
     }
 }
