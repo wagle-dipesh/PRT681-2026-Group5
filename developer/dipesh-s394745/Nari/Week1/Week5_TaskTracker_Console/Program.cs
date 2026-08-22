@@ -16,3 +16,11 @@ var task = new TaskItem
 
 int newId = await repository.CreateAsync(task);
 Console.WriteLine($"Inserted Task ID: {newId}");
+
+Console.WriteLine("--- Fetching All Tasks ---");
+var tasks = await repository.GetAllAsync();
+foreach (var taskList in tasks)
+{
+    string status = taskList.IsCompleted ? "[DONE]" : "[PENDING]";
+    Console.WriteLine($"{taskList.Id}. {status} {taskList.Title} - {taskList.Description}");
+}
