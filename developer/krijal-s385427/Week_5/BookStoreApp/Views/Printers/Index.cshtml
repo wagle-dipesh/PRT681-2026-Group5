@@ -1,0 +1,73 @@
+@model IEnumerable<BookStoreApp.DAL.Printer>
+
+@{
+    ViewData["Title"] = "Printers";
+}
+
+<h1>Printers</h1>
+
+@if (User.Identity?.IsAuthenticated == true)
+{
+    <p>
+        <a asp-action="Create"
+           class="btn btn-primary">
+            Create New Printer
+        </a>
+    </p>
+}
+else
+{
+    <div class="alert alert-info">
+        Please
+        <a asp-area="Identity"
+           asp-page="/Account/Login">
+            log in
+        </a>
+        to create, edit or delete printers.
+    </div>
+}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var printer in Model)
+        {
+            <tr>
+                <td>@printer.Name</td>
+                <td>@printer.Brand</td>
+                <td>@printer.Model</td>
+
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@printer.Id"
+                       class="btn btn-sm btn-info">
+                        Details
+                    </a>
+
+                    @if (User.Identity?.IsAuthenticated == true)
+                    {
+                        <a asp-action="Edit"
+                           asp-route-id="@printer.Id"
+                           class="btn btn-sm btn-warning">
+                            Edit
+                        </a>
+
+                        <a asp-action="Delete"
+                           asp-route-id="@printer.Id"
+                           class="btn btn-sm btn-danger">
+                            Delete
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
