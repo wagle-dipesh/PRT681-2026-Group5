@@ -1,10 +1,13 @@
-﻿using Week5_TaskTracker_Console.Models;
+using Week5_TaskTracker_Console.Models;
 
 namespace Week5_TaskTracker_Console.Repositories
 {
     public interface ITaskRepository
     {
-        Task<int> CreateAsync(TaskItem task);
-        Task<IEnumerable<TaskItem>> GetAllAsync();
+        Task<int> CreateTaskAsync(TaskItem task);
+        Task<IEnumerable<TaskItem>> GetAllTaskAsync();
+        Task<TaskItem?> GetTaskByIdAsync(int id);
+        Task<bool> UpdateTaskAsync(TaskItem task);
+        Task<bool> DeleteTaskAsync(int id);
     }
 }
