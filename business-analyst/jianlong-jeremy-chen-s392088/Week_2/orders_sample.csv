@@ -1,0 +1,11 @@
+OrderId,CustomerName,Region,OrderDate,Amount,Status
+101,Alice Johnson,NT,2026-07-01,250.00,Completed
+102,Alice Johnson,NT,2026-07-05,120.50,Completed
+103,Ben Carter,QLD,2026-07-03,75.00,Cancelled
+104,Chloe Nguyen,NT,2026-07-04,300.00,Pending
+105,Chloe Nguyen,NT,2026-07-06,60.00,Completed
+106,David Smith,VIC,2026-07-07,410.00,Completed
+107,Ben Carter,QLD,2026-07-08,150.00,Completed
+108,David Smith,VIC,2026-07-09,90.00,Completed
+109,Alice Johnson,NT,2026-07-10,200.00,Pending
+110,Chloe Nguyen,NT,2026-07-11,175.00,Completed
