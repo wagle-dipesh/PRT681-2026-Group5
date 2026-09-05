@@ -11,7 +11,7 @@ function App() {
   const [error, setError] = useState(null);       
 
   // API URL (where your backend is running)
-  const API_URL = 'http://localhost:5235/api/tasks';
+  const API_URL = 'https://localhost:44366/api/tasks';
 
   const fetchTasks = async () => {
     setLoading(true);
