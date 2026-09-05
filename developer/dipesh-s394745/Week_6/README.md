@@ -1,29 +1,23 @@
-# Week 6 Task Manager
+# Task Manager
 
-Full-stack task manager built with a React frontend and an ASP.NET Core Web API backend using SQLite.
+This is a small task manager made with React and ASP.NET Core. Tasks are stored in a local SQLite database.
 
-## Prerequisites
+## What you need
 
 - .NET 10 SDK
-- Node.js 18 or newer and npm
-- Visual Studio 2022 (recommended for the IIS Express HTTPS profile)
+- Node.js and npm
+- Visual Studio 2022
 
-Check the installed versions:
+## How to run it
 
-```powershell
-dotnet --version
-node --version
-npm --version
-```
-
-## Run with Visual Studio
-
-This is the recommended setup because the frontend is configured to call the IIS Express HTTPS API at `https://localhost:44366/api/tasks`.
+Start the API first:
 
 1. Open `TaskManagerAPI/TaskManagerAPI.slnx` in Visual Studio.
-2. Select **IIS Express** as the startup profile.
-3. Start the API. The Swagger page should open at `https://localhost:44366/swagger`.
-4. In a separate terminal, install and start the frontend:
+2. Choose **IIS Express** and run the project.
+
+The API will run at `https://localhost:44366`. You can view the API documentation at `https://localhost:44366/swagger`.
+
+Then start the React app in a new terminal:
 
 ```powershell
 cd frontend
@@ -31,13 +25,13 @@ npm install
 npm start
 ```
 
-5. Open `http://localhost:3000` in a browser.
+Open `http://localhost:3000` in your browser.
 
-The SQLite database is created automatically as `TaskManagerAPI/tasks.db` when the API starts.
+The database is created automatically in `TaskManagerAPI/tasks.db`.
 
-## Run the API from the terminal
+## Running the API without Visual Studio
 
-From the Week 6 directory:
+From the Week 6 folder, run:
 
 ```powershell
 cd TaskManagerAPI
@@ -45,35 +39,8 @@ dotnet restore
 dotnet run --launch-profile http
 ```
 
-This starts the API at `http://localhost:5235`. Swagger is available at `http://localhost:5235/swagger`.
-
-The current frontend uses the IIS Express URL. To use the terminal profile instead, update `API_URL` in `frontend/src/App.jsx` to:
+This runs the API at `http://localhost:5235`. To connect the frontend to it, change the API URL in `frontend/src/App.jsx` to:
 
 ```javascript
 const API_URL = 'http://localhost:5235/api/tasks';
 ```
-
-Then restart the React development server.
-
-## Useful commands
-
-Frontend commands are run from `frontend`:
-
-```powershell
-npm start       # Start the development server
-npm test        # Run React tests
-npm run build   # Create a production build
-```
-
-Backend commands are run from `TaskManagerAPI`:
-
-```powershell
-dotnet build    # Build the API
-dotnet run      # Run using the default profile
-```
-
-## Troubleshooting
-
-- If the browser reports a certificate warning for `localhost`, trust the local ASP.NET Core development certificate with `dotnet dev-certs https --trust`.
-- If the task list cannot load, confirm that the API is running at the URL configured in `frontend/src/App.jsx`.
-- If the browser reports a CORS error, use `http://localhost:3000` for the React app. That origin is allowed by the API configuration.
