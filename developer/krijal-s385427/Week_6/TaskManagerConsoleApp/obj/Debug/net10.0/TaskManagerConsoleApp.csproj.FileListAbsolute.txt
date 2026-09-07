@@ -1,0 +1,15 @@
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\bin\Debug\net10.0\TaskManagerConsoleApp.exe
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\bin\Debug\net10.0\TaskManagerConsoleApp.deps.json
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\bin\Debug\net10.0\TaskManagerConsoleApp.runtimeconfig.json
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\bin\Debug\net10.0\TaskManagerConsoleApp.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\bin\Debug\net10.0\TaskManagerConsoleApp.pdb
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.AssemblyInfoInputs.cache
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.AssemblyInfo.cs
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.sourcelink.json
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\refint\TaskManagerConsoleApp.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.pdb
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\TaskManagerConsoleApp.genruntimeconfig.cache
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_6\TaskManagerConsoleApp\obj\Debug\net10.0\ref\TaskManagerConsoleApp.dll
