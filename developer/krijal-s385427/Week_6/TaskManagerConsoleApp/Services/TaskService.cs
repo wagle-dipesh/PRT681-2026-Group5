@@ -60,4 +60,55 @@ public class TaskService
 
         return tasks;
     }
+    public async Task<bool> UpdateTaskAsync(
+    int id,
+    string title,
+    string description,
+    bool isCompleted)
+{
+    const string sql = """
+        UPDATE dbo.Tasks
+        SET Title = @Title,
+            Description = @Description,
+            IsCompleted = @IsCompleted
+        WHERE Id = @Id;
+        """;
+
+    await using var connection =
+        new SqlConnection(DatabaseConnection.ConnectionString);
+
+    await using var command = new SqlCommand(sql, connection);
+
+    command.Parameters.AddWithValue("@Id", id);
+    command.Parameters.AddWithValue("@Title", title);
+    command.Parameters.AddWithValue("@Description", description);
+    command.Parameters.AddWithValue("@IsCompleted", isCompleted);
+
+    await connection.OpenAsync();
+
+    var affectedRows = await command.ExecuteNonQueryAsync();
+
+    return affectedRows > 0;
+}
+
+public async Task<bool> DeleteTaskAsync(int id)
+{
+    const string sql = """
+        DELETE FROM dbo.Tasks
+        WHERE Id = @Id;
+        """;
+
+    await using var connection =
+        new SqlConnection(DatabaseConnection.ConnectionString);
+
+    await using var command = new SqlCommand(sql, connection);
+
+    command.Parameters.AddWithValue("@Id", id);
+
+    await connection.OpenAsync();
+
+    var affectedRows = await command.ExecuteNonQueryAsync();
+
+    return affectedRows > 0;
+}
 }
