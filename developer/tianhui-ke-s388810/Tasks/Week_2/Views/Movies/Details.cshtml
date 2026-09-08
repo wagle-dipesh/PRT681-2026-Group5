@@ -1,0 +1,30 @@
+@model Movie
+
+@{
+    ViewData["Title"] = "Movie Details";
+}
+
+<h1>Movie Details</h1>
+
+<dl>
+    <dt>Name</dt>
+    <dd>@Model.Name</dd>
+
+    <dt>Release Date</dt>
+    <dd>@Model.ReleaseDate.ToShortDateString()</dd>
+
+    <dt>Director</dt>
+    <dd>@Model.Director</dd>
+
+    <dt>Contact Email Address</dt>
+    <dd>@Model.ContactEmail</dd>
+
+    <dt>Language</dt>
+    <dd>@Model.Language</dd>
+
+    <dt>Category</dt>
+    <dd>@Model.Category?.Name (@Model.Category?.Code)</dd>
+</dl>
+
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+<a asp-action="Index">Back to list</a>
