@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Theater Admin (Web API + jQuery)</title>
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="#" id="nav-movies" class="active">Movies</a> |
+        <a href="#" id="nav-categories">Categories</a>
+    </nav>
+
+    <!-- ===================== MOVIES SECTION ===================== -->
+    <section id="movies-section">
+        <h1>Movies</h1>
+
+        <table id="movies-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Release Date</th>
+                    <th>Director</th>
+                    <th>Contact Email</th>
+                    <th>Language</th>
+                    <th>Category</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="movies-tbody"></tbody>
+        </table>
+
+        <h2 id="movie-form-title">Create New Movie</h2>
+        <div id="movie-form-error" class="error"></div>
+        <form id="movie-form">
+            <input type="hidden" id="movie-id" />
+
+            <div class="form-group">
+                <label for="movie-name">Name</label>
+                <input type="text" id="movie-name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="movie-release-date">Release Date</label>
+                <input type="date" id="movie-release-date" required />
+            </div>
+
+            <div class="form-group">
+                <label for="movie-director">Director</label>
+                <input type="text" id="movie-director" required />
+            </div>
+
+            <div class="form-group">
+                <label for="movie-email">Contact Email Address</label>
+                <input type="email" id="movie-email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="movie-language">Language</label>
+                <select id="movie-language">
+                    <option value="English">English</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Chinese">Chinese</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="movie-category">Category</label>
+                <select id="movie-category" required>
+                    <option value="">-- Select a category --</option>
+                </select>
+            </div>
+
+            <button type="submit" id="movie-submit-btn">Create</button>
+            <button type="button" id="movie-cancel-btn" style="display:none;">Cancel Edit</button>
+        </form>
+    </section>
+
+    <!-- ===================== CATEGORIES SECTION ===================== -->
+    <section id="categories-section" style="display:none;">
+        <h1>Categories</h1>
+
+        <table id="categories-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="categories-tbody"></tbody>
+        </table>
+
+        <h2 id="category-form-title">Create New Category</h2>
+        <div id="category-form-error" class="error"></div>
+        <form id="category-form">
+            <input type="hidden" id="category-id" />
+
+            <div class="form-group">
+                <label for="category-name">Name</label>
+                <input type="text" id="category-name" required />
+            </div>
+
+            <div class="form-group">
+                <label for="category-code">Code</label>
+                <input type="text" id="category-code" required />
+            </div>
+
+            <button type="submit" id="category-submit-btn">Create</button>
+            <button type="button" id="category-cancel-btn" style="display:none;">Cancel Edit</button>
+        </form>
+    </section>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
