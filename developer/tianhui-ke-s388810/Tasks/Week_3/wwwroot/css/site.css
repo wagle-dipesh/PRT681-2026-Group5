@@ -1,0 +1,8 @@
+body { font-family: Arial, sans-serif; margin: 2rem; }
+nav { margin-bottom: 1.5rem; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 1.5rem; }
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; margin-bottom: 4px; }
+.error { color: #b00020; margin-bottom: 1rem; }
+button { margin-right: 8px; }
