@@ -6,6 +6,61 @@ This project is a C# console application that connects to SQL Server Express and
 
 It was developed as the Week 6 developer practice task.
 
+## Additional Learning
+
+Along with developing this application, I completed additional learning in Jira, Power BI and GitHub.
+
+### Jira
+
+- **Project Management**
+  - Creating and configuring Jira projects
+  - Understanding Scrum and Kanban projects
+  - Managing project roles and permissions
+
+- **Issue and Sprint Management**
+  - Creating epics, stories, tasks and bugs
+  - Planning and managing sprints
+  - Tracking issue status and workflow
+
+- **Boards and Reporting**
+  - Using Scrum and Kanban boards
+  - Creating filters with JQL
+  - Using dashboards and reporting gadgets
+
+### Power BI
+
+- **Data Preparation**
+  - Importing data from different sources
+  - Cleaning and transforming data
+  - Managing data types and missing values
+
+- **Data Visualisation**
+  - Creating charts, tables and cards
+  - Applying filters and slicers
+  - Formatting report pages
+
+- **Reports and Dashboards**
+  - Creating interactive reports
+  - Identifying trends and key information
+  - Presenting data through dashboards
+
+### GitHub
+
+- **Repository Management**
+  - Creating and cloning repositories
+  - Organising project files
+  - Using README documentation
+
+- **Version Control**
+  - Staging and committing changes
+  - Creating meaningful commit messages
+  - Pushing and pulling changes
+
+- **Team Collaboration**
+  - Working with branches
+  - Creating and reviewing pull requests
+  - Resolving merge conflicts
+  
 ## Technologies
 
 - C#
