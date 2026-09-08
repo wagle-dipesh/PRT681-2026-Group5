@@ -14,19 +14,19 @@ tasks-frontend (React, port 5173) --HTTP (fetch)--> TasksApi (ASP.NET Core, port
 ## Run locally (without Docker)
 ```bash
 # Backend
-cd developer/Tianhui-Ke/Week2-WebAPI-Frontend-Basics/TasksApi
+cd developer/Tianhui-Ke/Week_2/TasksApi
 dotnet restore
 dotnet run   # starts on http://localhost:5000 by default (varies by machine — check the terminal output for the actual port and update the frontend's API_URL to match)
 
 # Frontend (separate terminal)
-cd developer/Tianhui-Ke/Week2-WebAPI-Frontend-Basics/tasks-frontend
+cd developer/Tianhui-Ke/Week_2/tasks-frontend
 npm install
 npm run dev  # starts on http://localhost:5173
 ```
 
 ## Run the API in Docker
 ```bash
-cd developer/Tianhui-Ke/Week3-FullStack-Integration-Deployment
+cd developer/Tianhui-Ke/Week_3
 docker build -t tasks-api -f Dockerfile ..
 docker run -p 8080:8080 tasks-api
 ```

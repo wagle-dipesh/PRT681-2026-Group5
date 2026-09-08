@@ -1,9 +1,9 @@
 # Build stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY Week2-WebAPI-Frontend-Basics/TasksApi/*.csproj ./
+COPY Week_2/TasksApi/*.csproj ./
 RUN dotnet restore
-COPY Week2-WebAPI-Frontend-Basics/TasksApi/. ./
+COPY Week_2/TasksApi/. ./
 RUN dotnet publish -c Release -o /app/publish
 
 # Runtime stage
