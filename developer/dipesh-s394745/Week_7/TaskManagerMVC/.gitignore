@@ -1,0 +1,16 @@
+cat > .gitignore << 'EOF'
+bin/
+obj/
+.vs/
+*.user
+*.suo
+.idea/
+.vscode/
+*.nupkg
+**/packages/*
+*.db
+appsettings.Development.json
+*.env
+.DS_Store
+Thumbs.db
+EOF
