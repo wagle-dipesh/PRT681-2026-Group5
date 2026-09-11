@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "BGNM95T4I+o=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Krijal Khadka\\Desktop\\PRT681-2026-Group5\\developer\\krijal-s385427\\Week_7\\TaskManagerApi\\TaskManagerApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Krijal Khadka\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.10\\microsoft.aspnetcore.openapi.10.0.10.nupkg.sha512",
+    "C:\\Users\\Krijal Khadka\\.nuget\\packages\\microsoft.openapi\\2.12.2\\microsoft.openapi.2.12.2.nupkg.sha512"
+  ],
+  "logs": []
+}
