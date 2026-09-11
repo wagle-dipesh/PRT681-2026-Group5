@@ -1,0 +1,20 @@
+@use "../../color-system/_functions.scss" as *;
+@use "../../mixins/index.scss" as *;
+@use "../../functions/index.scss" as *;
+@use "../../_variables.scss" as *;
+@use "./variables.scss" as *;
+
+@mixin kendo-dialog--theme-base() {
+    .k-dialog {
+        background-color: $kendo-dialog-bg;
+    }
+
+    // Dialog titlebar
+    .k-dialog-titlebar {
+        @include fill(
+            $kendo-dialog-titlebar-text,
+            $kendo-dialog-titlebar-bg,
+            $kendo-dialog-titlebar-border
+        );
+    }
+}
