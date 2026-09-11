@@ -1,0 +1,16 @@
+## Build results
+bin/
+obj/
+
+## Visual Studio files
+.vs/
+*.user
+*.suo
+
+## Other editors
+.idea/
+.vscode/
+
+## OS files
+.DS_Store
+Thumbs.db
