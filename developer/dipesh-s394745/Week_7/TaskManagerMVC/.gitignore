@@ -1,16 +1,16 @@
-cat > .gitignore << 'EOF'
+## Build results
 bin/
 obj/
+
+## Visual Studio files
 .vs/
 *.user
 *.suo
+
+## Other editors
 .idea/
 .vscode/
-*.nupkg
-**/packages/*
-*.db
-appsettings.Development.json
-*.env
+
+## OS files
 .DS_Store
 Thumbs.db
-EOF
