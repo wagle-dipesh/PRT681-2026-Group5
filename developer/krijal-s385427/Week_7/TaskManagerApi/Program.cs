@@ -1,12 +1,34 @@
+using Microsoft.EntityFrameworkCore;
+using TaskManagerApi.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+// Add API controller support.
+builder.Services.AddControllers();
+
+// Add OpenAPI documentation.
 builder.Services.AddOpenApi();
+
+// Configure Entity Framework Core and SQL Server.
+builder.Services.AddDbContext<TaskManagerContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("TaskManagerConnection")));
+
+// Allow the React frontend to communicate with this API.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactClient", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Enable OpenAPI during development.
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -14,33 +36,16 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+// Apply the CORS policy.
+app.UseCors("AllowReactClient");
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+// Connect attribute-routed API controllers.
+app.MapControllers();
 
+// Simple endpoint for checking whether the API is running.
 app.MapGet("/", () => new
 {
     message = "Task Manager API is running"
 });
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
