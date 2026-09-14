@@ -1,35 +1,22 @@
 services:
   db:
-    image: mcr.microsoft.com/mssql/server:2022-latest
+    image: postgres:16
     container_name: taskmanager-db
     environment:
-      ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: ${SA_PASSWORD:-YourStrong!Passw0rd}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: TaskManagerMvcDb
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
-      - "1433:1433"
+      - "5432:5432"
     volumes:
-      - taskmanager-db-data:/var/opt/mssql
+      - taskmanager-db-data:/var/lib/postgresql/data
+      - ./Database:/docker-entrypoint-initdb.d:ro
     restart: unless-stopped
-
-  db-init:
-    image: mcr.microsoft.com/mssql-tools
-    container_name: taskmanager-db-init
-    depends_on:
-      - db
-    environment:
-      MSSQL_SA_PASSWORD: ${SA_PASSWORD:-YourStrong!Passw0rd}
-    volumes:
-      - ./Database:/scripts:ro
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        until /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "$$MSSQL_SA_PASSWORD" -Q "SELECT 1" &> /dev/null; do
-          echo "Waiting for SQL Server to be ready..."
-          sleep 2
-        done
-        echo "Applying Database/Setup.sql..."
-        /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "$$MSSQL_SA_PASSWORD" -i /scripts/Setup.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
 
   web:
     build:
@@ -37,9 +24,10 @@ services:
       dockerfile: Dockerfile
     container_name: taskmanager-web
     depends_on:
-      - db-init
+      db:
+        condition: service_healthy
     environment:
-      ConnectionStrings__DefaultConnection: "Server=db;Database=TaskManagerMvcDb;User Id=sa;Password=${SA_PASSWORD:-YourStrong!Passw0rd};TrustServerCertificate=True"
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=TaskManagerMvcDb;Username=postgres;Password=${DB_PASSWORD:-postgres};"
     ports:
       - "8080:8080"
     restart: unless-stopped

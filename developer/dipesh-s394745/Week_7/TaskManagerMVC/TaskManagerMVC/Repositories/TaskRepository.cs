@@ -1,5 +1,5 @@
 using Dapper;
-using Microsoft.Data.SqlClient;
+using Npgsql;
 using System.Data;
 using TaskManagerMVC.Data;
 using TaskManagerMVC.Exceptions;
@@ -24,22 +24,19 @@ namespace TaskManagerMVC.Repositories
             {
                 using IDbConnection db = _connectionFactory.CreateConnection();
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@Action", "i");
-                parameters.Add("@Title", task.Title);
-                parameters.Add("@Description", task.Description);
-                parameters.Add("@IsCompleted", task.IsCompleted);
-                parameters.Add("@InsertedId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                const string sql = @"
+                    INSERT INTO Tasks (Title, Description, IsCompleted, CreatedAt)
+                    VALUES (@Title, @Description, @IsCompleted, NOW())
+                    RETURNING Id;";
 
-                await db.ExecuteAsync(
-                    "spTasks_Manager",
-                    parameters,
-                    commandType: CommandType.StoredProcedure
-                );
-
-                return parameters.Get<int>("@InsertedId");
+                return await db.ExecuteScalarAsync<int>(sql, new
+                {
+                    task.Title,
+                    task.Description,
+                    task.IsCompleted
+                });
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 _logger.LogError(ex, "Database error while creating task '{Title}'.", task.Title);
                 throw new RepositoryException("Unable to create the task because a database error occurred.", ex);
@@ -52,16 +49,14 @@ namespace TaskManagerMVC.Repositories
             {
                 using IDbConnection db = _connectionFactory.CreateConnection();
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@Action", "sa");
+                const string sql = @"
+                    SELECT Id, Title, Description, IsCompleted, CreatedAt
+                    FROM Tasks
+                    ORDER BY CreatedAt DESC;";
 
-                return await db.QueryAsync<TaskItem>(
-                    "spTasks_Manager",
-                    parameters,
-                    commandType: CommandType.StoredProcedure
-                );
+                return await db.QueryAsync<TaskItem>(sql);
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 _logger.LogError(ex, "Database error while retrieving all tasks.");
                 throw new RepositoryException("Unable to load the task list because a database error occurred.", ex);
@@ -74,17 +69,14 @@ namespace TaskManagerMVC.Repositories
             {
                 using IDbConnection db = _connectionFactory.CreateConnection();
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@Action", "s");
-                parameters.Add("@Id", id);
+                const string sql = @"
+                    SELECT Id, Title, Description, IsCompleted, CreatedAt
+                    FROM Tasks
+                    WHERE Id = @Id;";
 
-                return await db.QueryFirstOrDefaultAsync<TaskItem>(
-                    "spTasks_Manager",
-                    parameters,
-                    commandType: CommandType.StoredProcedure
-                );
+                return await db.QueryFirstOrDefaultAsync<TaskItem>(sql, new { Id = id });
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 _logger.LogError(ex, "Database error while retrieving task {Id}.", id);
                 throw new RepositoryException("Unable to load the task because a database error occurred.", ex);
@@ -97,23 +89,24 @@ namespace TaskManagerMVC.Repositories
             {
                 using IDbConnection db = _connectionFactory.CreateConnection();
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@Action", "u");
-                parameters.Add("@Id", task.Id);
-                parameters.Add("@Title", task.Title);
-                parameters.Add("@Description", task.Description);
-                parameters.Add("@IsCompleted", task.IsCompleted);
-                parameters.Add("@RowsAffected", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                const string sql = @"
+                    UPDATE Tasks
+                    SET Title = @Title,
+                        Description = @Description,
+                        IsCompleted = @IsCompleted
+                    WHERE Id = @Id;";
 
-                await db.ExecuteAsync(
-                    "spTasks_Manager",
-                    parameters,
-                    commandType: CommandType.StoredProcedure
-                );
+                int rowsAffected = await db.ExecuteAsync(sql, new
+                {
+                    task.Id,
+                    task.Title,
+                    task.Description,
+                    task.IsCompleted
+                });
 
-                return parameters.Get<int>("@RowsAffected") > 0;
+                return rowsAffected > 0;
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 _logger.LogError(ex, "Database error while updating task {Id}.", task.Id);
                 throw new RepositoryException("Unable to update the task because a database error occurred.", ex);
@@ -126,20 +119,13 @@ namespace TaskManagerMVC.Repositories
             {
                 using IDbConnection db = _connectionFactory.CreateConnection();
 
-                var parameters = new DynamicParameters();
-                parameters.Add("@Action", "d");
-                parameters.Add("@Id", id);
-                parameters.Add("@RowsAffected", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                const string sql = "DELETE FROM Tasks WHERE Id = @Id;";
 
-                await db.ExecuteAsync(
-                    "spTasks_Manager",
-                    parameters,
-                    commandType: CommandType.StoredProcedure
-                );
+                int rowsAffected = await db.ExecuteAsync(sql, new { Id = id });
 
-                return parameters.Get<int>("@RowsAffected") > 0;
+                return rowsAffected > 0;
             }
-            catch (SqlException ex)
+            catch (NpgsqlException ex)
             {
                 _logger.LogError(ex, "Database error while deleting task {Id}.", id);
                 throw new RepositoryException("Unable to delete the task because a database error occurred.", ex);
