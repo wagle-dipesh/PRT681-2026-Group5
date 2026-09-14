@@ -1,8 +1,8 @@
 # TaskManagerMVC
 
-A simple task-tracking web app built with ASP.NET Core MVC. It's a single server-rendered
-application — Razor views act as the frontend, and the MVC controllers act as the API/backend
-— backed by PostgreSQL via Dapper.
+A task management web application built with ASP.NET Core MVC. It uses Razor views for the
+frontend and MVC controllers for the backend, with PostgreSQL as the database, accessed through
+Dapper.
 
 ## Architecture
 
@@ -10,51 +10,55 @@ application — Razor views act as the frontend, and the MVC controllers act as 
 Browser (Razor views, Bootstrap)
         |
         v
-TasksController / HomeController   <-- MVC controllers (request handling, validation)
+Controllers (HomeController, TasksController)
         |
         v
-ITaskRepository -> TaskRepository  <-- Dapper, plain parameterized SQL
+ITaskRepository / TaskRepository (Dapper)
         |
         v
-   PostgreSQL (TaskManagerMvcDb)   <-- Tasks table
+PostgreSQL (TaskManagerMvcDb)
 ```
 
 - **Views/** – Razor pages for the Home and Tasks screens (list, create, edit, details, delete).
-- **Controllers/** – `HomeController` (landing/error pages) and `TasksController` (task CRUD).
-- **Repositories/** – `ITaskRepository`/`TaskRepository`, the only layer that talks to the database.
-- **Data/** – `IDbConnectionFactory`/`DbConnectionFactory`, builds `NpgsqlConnection`s from the
-  `ConnectionStrings:DefaultConnection` configuration value.
+- **Controllers/** – `HomeController` for the landing/error pages and `TasksController` for task CRUD.
+- **Repositories/** – `ITaskRepository` / `TaskRepository`, the only layer that talks to the database.
+- **Data/** – `IDbConnectionFactory` / `DbConnectionFactory`, creates database connections from the
+  connection string in configuration.
 - **Database/Setup.sql** – creates the `Tasks` table.
-- **Models/** – `TaskItem` plus small view models for each page.
+- **Models/** – `TaskItem` and the view models used by each page.
 
-There is no separate SPA/API split: the controllers return HTML views directly, so
-"containerizing the API" and "containerizing the frontend" are the same container here.
+## Tech Stack
+
+- ASP.NET Core MVC (.NET 10)
+- PostgreSQL
+- Dapper
+- Docker
 
 ## Prerequisites
 
-- [.NET 10 SDK](https://dotnet.microsoft.com/download) (for running outside Docker)
+- [.NET 10 SDK](https://dotnet.microsoft.com/download)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (for the containerized setup)
-- PostgreSQL, or the Dockerized PostgreSQL described below
+- PostgreSQL (local install, or use the Dockerized setup below)
 
-## Run locally without Docker
+## Running Locally (without Docker)
 
-1. Make sure a PostgreSQL instance is reachable and run `TaskManagerMVC/Database/Setup.sql`
-   against it once (the database itself must already exist), to create the `Tasks` table.
-2. Update the connection string in `TaskManagerMVC/appsettings.Development.json` /
-   `appsettings.json` if your server isn't the default local instance.
-3. From `TaskManagerMVC/TaskManagerMVC/`:
+1. Make sure a PostgreSQL instance is running and the database exists, then run
+   `TaskManagerMVC/Database/Setup.sql` against it once to create the `Tasks` table.
+2. Update the connection string in `TaskManagerMVC/appsettings.Development.json` or
+   `appsettings.json` to match your PostgreSQL server.
+3. From `TaskManagerMVC/TaskManagerMVC/`, run:
    ```
    dotnet run
    ```
-4. Browse to the URL printed in the console (e.g. `https://localhost:7170`).
+4. Open the URL shown in the console (e.g. `https://localhost:7170`).
 
-## Run locally with Docker
+## Running Locally (with Docker)
 
-`docker-compose.yml` (in `TaskManagerMVC/TaskManagerMVC/`) spins up two services:
+`docker-compose.yml` (in `TaskManagerMVC/TaskManagerMVC/`) starts two services:
 
-- `db` – PostgreSQL 16 in a container, with a named volume so data survives restarts. On first
-  init it automatically runs `Database/Setup.sql` (mounted into `/docker-entrypoint-initdb.d`).
-- `web` – builds the app from the `Dockerfile` and connects to `db`.
+- **db** – PostgreSQL 16, with a named volume so data persists between restarts. It runs
+  `Database/Setup.sql` automatically on first startup.
+- **web** – the app, built from the `Dockerfile`.
 
 From `TaskManagerMVC/TaskManagerMVC/`:
 
@@ -62,11 +66,10 @@ From `TaskManagerMVC/TaskManagerMVC/`:
 docker compose up --build
 ```
 
-Then browse to **http://localhost:8080**. A `/health` endpoint is also exposed for quick checks
-(`curl http://localhost:8080/health`) and is what the Render deployment below uses as its
-health-check path.
+Then open **http://localhost:8080**. The app also exposes a `/health` endpoint used for health
+checks in deployment.
 
-To reset the database, stop the stack and drop the volume:
+To reset the database:
 
 ```
 docker compose down -v
@@ -74,42 +77,43 @@ docker compose down -v
 
 ### Configuration
 
-The connection string is read from the standard ASP.NET Core configuration key
-`ConnectionStrings:DefaultConnection`, which can be supplied as the environment variable
-`ConnectionStrings__DefaultConnection` (double underscore). This is the same mechanism used
-locally by `docker-compose.yml` and by the Render deployment below — nothing in the app code
-needs to change between environments, only that one setting.
+The connection string is read from `ConnectionStrings:DefaultConnection`, which can also be set
+using the environment variable `ConnectionStrings__DefaultConnection`. This is the same setting
+used by Docker Compose and by the Render deployment, so nothing in the code changes between
+environments.
 
 ## Deployment
 
-Both the app and the database are hosted on **Render**, entirely on its free tier:
+The app and database are both hosted on Render (free tier).
 
-1. **Create the database first.** In the [Render dashboard](https://dashboard.render.com/),
-   **New > PostgreSQL**, free instance type. Once it's up, open its connection details and run
-   `Database/Setup.sql` against it (e.g. via `psql` using the "External Connection String" Render
-   gives you, or Render's built-in web shell) to create the `Tasks` table.
-2. **Deploy the app.** Push this repo to GitHub (already the case here), then in the Render
-   dashboard **New > Web Service**, connect this repository, and set:
-   - **Root Directory**: `developer/dipesh-s394745/Week_7/TaskManagerMVC/TaskManagerMVC`
-   - **Environment**: `Docker` (Render finds the `Dockerfile` in the root directory above)
-   - **Instance Type**: `Free`
-   - **Health Check Path**: `/health`
-3. Add an environment variable on the web service:
-   - `ConnectionStrings__DefaultConnection` = the database's **Internal Connection String** from
-     step 1 (same-region services reach Render Postgres over the private network for free), in
-     Npgsql format, e.g. `Host=<host>;Port=5432;Database=<db>;Username=<user>;Password=<password>;`
-4. Deploy. Render assigns a `https://<service>.onrender.com` URL.
+1. **Create the database.** In the Render dashboard, choose **New > PostgreSQL** and select the
+   free instance type. Once it's running, run `Database/Setup.sql` against it (for example with
+   `psql`, using the External Database URL from the Render dashboard) to create the `Tasks` table.
+2. **Deploy the app.** Push the repository to GitHub, then in the Render dashboard choose
+   **New > Web Service** and connect the repository. Configure:
+   - Root Directory: `developer/dipesh-s394745/Week_7/TaskManagerMVC/TaskManagerMVC`
+   - Environment: `Docker`
+   - Instance Type: `Free`
+   - Health Check Path: `/health`
+   - Region: same region as the database
+3. Add an environment variable to the web service:
+   - `ConnectionStrings__DefaultConnection`, using the database's connection details in Npgsql
+     format:
+     ```
+     Host=<host>;Port=5432;Database=<db>;Username=<user>;Password=<password>;
+     ```
+     Render shows connection details as a `postgresql://` URL by default — this needs to be
+     converted to the format above, since Npgsql doesn't accept the URL format directly.
+4. Deploy. Render will build and host the app at `https://<service-name>.onrender.com`.
 
-> Free-tier notes: Render's free web services spin down after periods of inactivity and take a
-> few seconds to wake up on the next request. Free Postgres databases expire 30 days after
-> creation (14-day grace period to upgrade before the data is deleted) — fine for a course demo,
-> but not for anything you need to keep long-term without upgrading to a paid instance.
+Notes on the free tier: web services spin down after periods of inactivity and take a few seconds
+to restart on the next request. Free PostgreSQL databases expire 30 days after creation (with a
+14-day grace period before deletion), which is fine for a course project but not for long-term use
+without upgrading.
 
 ## Notes
 
-- `Program.cs` adds forwarded-headers handling (`UseForwardedHeaders`) because Render terminates
-  TLS at its edge and forwards plain HTTP to the container — without it, ASP.NET Core wouldn't
-  know a request actually arrived over HTTPS.
-- The Data Protection warning in the container logs ("keys may not be persisted...") is expected
-  for a single-instance demo deployment like this one; it would matter for scaling to multiple
-  instances or for anti-forgery tokens surviving a container restart, which is out of scope here.
+- `Program.cs` uses `UseForwardedHeaders` because Render terminates HTTPS at its edge and forwards
+  plain HTTP to the container.
+- The Data Protection warning seen in the logs ("keys may not be persisted...") is expected for a
+  single-instance deployment and doesn't affect functionality here.
