@@ -1,4 +1,4 @@
-using Microsoft.Data.SqlClient;
+using Npgsql;
 using System.Data;
 
 namespace TaskManagerMVC.Data
@@ -13,6 +13,6 @@ namespace TaskManagerMVC.Data
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' was not found in configuration.");
         }
 
-        public IDbConnection CreateConnection() => new SqlConnection(_connectionString);
+        public IDbConnection CreateConnection() => new NpgsqlConnection(_connectionString);
     }
 }

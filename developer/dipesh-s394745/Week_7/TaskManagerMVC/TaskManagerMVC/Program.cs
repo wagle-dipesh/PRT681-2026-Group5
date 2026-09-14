@@ -18,8 +18,8 @@ builder.Services.Configure<ForwardedHeadersOptions>(options =>
 
 var app = builder.Build();
 
-// Render and Azure App Service terminate TLS at their edge and forward plain HTTP to
-// the container, so this must run before UseHttpsRedirection/UseHsts to avoid redirect loops.
+// Render terminates TLS at its edge and forwards plain HTTP to the container, so this
+// must run before UseHttpsRedirection/UseHsts to avoid redirect loops.
 app.UseForwardedHeaders();
 
 if (!app.Environment.IsDevelopment())
