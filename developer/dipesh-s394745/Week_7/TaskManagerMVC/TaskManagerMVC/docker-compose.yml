@@ -1,0 +1,48 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: taskmanager-db
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${SA_PASSWORD:-YourStrong!Passw0rd}
+    ports:
+      - "1433:1433"
+    volumes:
+      - taskmanager-db-data:/var/opt/mssql
+    restart: unless-stopped
+
+  db-init:
+    image: mcr.microsoft.com/mssql-tools
+    container_name: taskmanager-db-init
+    depends_on:
+      - db
+    environment:
+      MSSQL_SA_PASSWORD: ${SA_PASSWORD:-YourStrong!Passw0rd}
+    volumes:
+      - ./Database:/scripts:ro
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        until /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "$$MSSQL_SA_PASSWORD" -Q "SELECT 1" &> /dev/null; do
+          echo "Waiting for SQL Server to be ready..."
+          sleep 2
+        done
+        echo "Applying Database/Setup.sql..."
+        /opt/mssql-tools/bin/sqlcmd -S db -U sa -P "$$MSSQL_SA_PASSWORD" -i /scripts/Setup.sql
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: taskmanager-web
+    depends_on:
+      - db-init
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=db;Database=TaskManagerMvcDb;User Id=sa;Password=${SA_PASSWORD:-YourStrong!Passw0rd};TrustServerCertificate=True"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  taskmanager-db-data:

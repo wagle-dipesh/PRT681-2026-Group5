@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.HttpOverrides;
 using TaskManagerMVC.Data;
 using TaskManagerMVC.Repositories;
 
@@ -8,7 +9,18 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IDbConnectionFactory, DbConnectionFactory>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+    options.KnownIPNetworks.Clear();
+    options.KnownProxies.Clear();
+});
+
 var app = builder.Build();
+
+// Render and Azure App Service terminate TLS at their edge and forward plain HTTP to
+// the container, so this must run before UseHttpsRedirection/UseHsts to avoid redirect loops.
+app.UseForwardedHeaders();
 
 if (!app.Environment.IsDevelopment())
 {
@@ -30,5 +42,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+app.MapGet("/health", () => Results.Ok("healthy"));
 
 app.Run();
