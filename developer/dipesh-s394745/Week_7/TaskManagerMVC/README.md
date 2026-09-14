@@ -4,6 +4,11 @@ A task management web application built with ASP.NET Core MVC. It uses Razor vie
 frontend and MVC controllers for the backend, with PostgreSQL as the database, accessed through
 Dapper.
 
+**Live demo:** https://prt681-2026-group5.onrender.com/Tasks
+
+(hosted on Render's free tier — the app spins down after inactivity, so the first request may take
+a few seconds to respond)
+
 ## Architecture
 
 ```

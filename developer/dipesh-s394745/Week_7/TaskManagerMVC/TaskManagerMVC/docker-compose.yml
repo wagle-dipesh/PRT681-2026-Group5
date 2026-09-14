@@ -27,6 +27,7 @@ services:
       db:
         condition: service_healthy
     environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
       ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=TaskManagerMvcDb;Username=postgres;Password=${DB_PASSWORD:-postgres};"
     ports:
       - "8080:8080"
