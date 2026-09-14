@@ -3,18 +3,20 @@ using TaskManagerApi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add API controller support.
 builder.Services.AddControllers();
-
-// Add OpenAPI documentation.
 builder.Services.AddOpenApi();
 
-// Configure Entity Framework Core and SQL Server.
 builder.Services.AddDbContext<TaskManagerContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("TaskManagerConnection")));
+        builder.Configuration.GetConnectionString("TaskManagerConnection"),
+        sqlOptions =>
+        {
+            sqlOptions.EnableRetryOnFailure(
+                maxRetryCount: 10,
+                maxRetryDelay: TimeSpan.FromSeconds(5),
+                errorNumbersToAdd: null);
+        }));
 
-// Allow the React frontend to communicate with this API.
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactClient", policy =>
@@ -28,21 +30,23 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Enable OpenAPI during development.
+// Create the database and Tasks table when using a new container.
+using (var scope = app.Services.CreateScope())
+{
+    var database = scope.ServiceProvider
+        .GetRequiredService<TaskManagerContext>();
+
+    await database.Database.EnsureCreatedAsync();
+}
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
-app.UseHttpsRedirection();
-
-// Apply the CORS policy.
 app.UseCors("AllowReactClient");
-
-// Connect attribute-routed API controllers.
 app.MapControllers();
 
-// Simple endpoint for checking whether the API is running.
 app.MapGet("/", () => new
 {
     message = "Task Manager API is running"
