@@ -1,0 +1,30 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: taskmanager-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
+    ports:
+      - "14330:1433"
+    volumes:
+      - taskmanager-sql-data:/var/opt/mssql
+
+  api:
+    build:
+      context: ./TaskManagerApi
+      dockerfile: Dockerfile
+    container_name: taskmanager-api
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:8080"
+      ConnectionStrings__TaskManagerConnection: "Server=sqlserver,1433;Database=TaskManagerDb;User Id=sa;Password=${MSSQL_SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - sqlserver
+    restart: on-failure
+
+volumes:
+  taskmanager-sql-data:

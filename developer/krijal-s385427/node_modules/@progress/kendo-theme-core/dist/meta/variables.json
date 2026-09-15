@@ -1,0 +1,1133 @@
+{
+    "kendo-is-dark-theme": {
+        "type": "Bool",
+        "value": "false"
+    },
+    "kendo-enable-shadows": {
+        "type": "Bool",
+        "value": "true"
+    },
+    "kendo-enable-rounded": {
+        "type": "Bool",
+        "value": "true"
+    },
+    "kendo-enable-gradients": {
+        "type": "Bool",
+        "value": "true"
+    },
+    "kendo-enable-transitions": {
+        "type": "Bool",
+        "value": "true"
+    },
+    "kendo-nested-disabled": {
+        "type": "Bool",
+        "value": "true"
+    },
+    "kendo-enable-focus-contrast": {
+        "type": "Bool",
+        "value": "false"
+    },
+    "wcag-min-contrast-ratio": {
+        "type": "Number",
+        "value": "4.5"
+    },
+    "kendo-enable-typography": {
+        "type": "Bool",
+        "value": "false"
+    },
+    "equilateral-index": {
+        "type": "Number",
+        "value": "1.7320508076"
+    },
+    "equilateral-height": {
+        "type": "Number",
+        "value": "0.8660254038"
+    },
+    "default-colors": {
+        "type": "Map",
+        "value": "(app-surface: oklch(100% 0 0deg), on-app-surface: oklch(from var(--kendo-color-app-surface) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), subtle: oklch(51.03% 0 0deg), surface: oklch(98.51% 0 0deg), surface-alt: oklch(from var(--kendo-color-surface) calc(l + 0.02) c h), border: oklch(0% 0 0deg / 0.08), border-alt: oklch(0% 0 0deg / 0.16), base-subtle: oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h), base-subtle-hover: oklch(from var(--kendo-color-base) calc(l + clamp(-0.064, (0.6 - l) * 99999, 0.064)) c h), base-subtle-active: oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h), base: oklch(97.02% 0 0deg), base-hover: oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h), base-active: oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h), base-emphasis: oklch(from var(--kendo-color-base) calc(l + clamp(-0.156, (0.6 - l) * 99999, 0.156)) c h), base-on-subtle: oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), on-base: oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), base-on-surface: oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), primary-subtle: oklch(from var(--kendo-color-primary) 0.958 calc(c * 0.11) h), primary-subtle-hover: oklch(from var(--kendo-color-primary) 0.927 calc(c * 0.19) h), primary-subtle-active: oklch(from var(--kendo-color-primary) 0.88 calc(c * 0.33) h), primary: oklch(69.85% 0.1923 27.19deg), primary-hover: oklch(from var(--kendo-color-primary) calc(l - 0.044) calc(c - 0.012) h), primary-active: oklch(from var(--kendo-color-primary) calc(l - 0.088) calc(c - 0.027) h), primary-emphasis: oklch(from var(--kendo-color-primary) calc(l * 0.665 + 0.33) calc(c * 0.61) h), primary-on-subtle: oklch(from var(--kendo-color-primary) calc(l * 0.48) calc(c * 0.47) h), on-primary: oklch(from var(--kendo-color-primary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), primary-on-surface: oklch(from var(--kendo-color-primary) l c h), secondary-subtle: oklch(from var(--kendo-color-secondary) calc(l * 0.03 + 0.97) calc(c * 0.12) h), secondary-subtle-hover: oklch(from var(--kendo-color-secondary) calc(l * 0.06 + 0.94) calc(c * 0.18) h), secondary-subtle-active: oklch(from var(--kendo-color-secondary) calc(l * 0.12 + 0.88) calc(c * 0.25) h), secondary: oklch(51.03% 0 0deg), secondary-hover: oklch(from var(--kendo-color-secondary) calc(l - 0.072) c h), secondary-active: oklch(from var(--kendo-color-secondary) calc(l - 0.15) c h), secondary-emphasis: oklch(from var(--kendo-color-secondary) calc(l * 0.19 + 0.81) calc(c * 0.55) h), secondary-on-subtle: oklch(from var(--kendo-color-secondary) calc(l * 0.375) c h), on-secondary: oklch(from var(--kendo-color-secondary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), secondary-on-surface: oklch(from var(--kendo-color-secondary) calc(l * 0.55) c h), tertiary-subtle: oklch(from var(--kendo-color-tertiary) 0.944 calc(c * 0.20) h), tertiary-subtle-hover: oklch(from var(--kendo-color-tertiary) 0.916 calc(c * 0.29) h), tertiary-subtle-active: oklch(from var(--kendo-color-tertiary) 0.872 calc(c * 0.46) h), tertiary: oklch(69.91% 0.157 238.99deg), tertiary-hover: oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.046, (0.6 - l) * 99999, 0.046)) c h), tertiary-active: oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.09, (0.6 - l) * 99999, 0.09)) c h), tertiary-emphasis: oklch(from var(--kendo-color-tertiary) calc(l * 0.665 + 0.33) calc(c * 0.75) h), tertiary-on-subtle: oklch(from var(--kendo-color-tertiary) calc(l * 0.50) calc(c * 0.48) h), on-tertiary: oklch(from var(--kendo-color-tertiary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), tertiary-on-surface: oklch(from var(--kendo-color-tertiary) calc(l * 0.87) c h), info-subtle: oklch(from var(--kendo-color-info) 0.9086 calc(c * 0.17) h), info-subtle-hover: oklch(from var(--kendo-color-info) 0.8646 calc(c * 0.24) h), info-subtle-active: oklch(from var(--kendo-color-info) 0.7417 calc(c * 0.50) h), info: oklch(51.78% 0.2301 261.43deg), info-hover: oklch(from var(--kendo-color-info) calc(l - 0.0286) calc(c - 0.0164) h), info-active: oklch(from var(--kendo-color-info) calc(l - 0.0624) calc(c - 0.032) h), info-emphasis: oklch(from var(--kendo-color-info) calc(l * 0.68 + 0.33) calc(c * 0.64) h), info-on-subtle: oklch(from var(--kendo-color-info) calc(l * 0.52) calc(c * 0.46) h), on-info: oklch(from var(--kendo-color-info) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), info-on-surface: oklch(from var(--kendo-color-info) calc(l * 0.88) calc(c * 0.86) h), success-subtle: oklch(from var(--kendo-color-success) 0.9326 calc(c * 0.20) h), success-subtle-hover: oklch(from var(--kendo-color-success) 0.9012 calc(c * 0.30) h), success-subtle-active: oklch(from var(--kendo-color-success) 0.8647 calc(c * 0.42) h), success: oklch(67.45% 0.2171 139.99deg), success-hover: oklch(from var(--kendo-color-success) calc(l - 0.042) calc(c - 0.0137) h), success-active: oklch(from var(--kendo-color-success) calc(l - 0.0847) calc(c - 0.0275) h), success-emphasis: oklch(from var(--kendo-color-success) calc(l * 0.675 + 0.33) calc(c * 0.78) h), success-on-subtle: oklch(from var(--kendo-color-success) calc(l * 0.61) calc(c * 0.60) h), on-success: oklch(from var(--kendo-color-success) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), success-on-surface: oklch(from var(--kendo-color-success) calc(l * 0.875) calc(c * 0.875) h), warning-subtle: oklch(from var(--kendo-color-warning) 0.9674 calc(c * 0.26) h), warning-subtle-hover: oklch(from var(--kendo-color-warning) 0.9508 calc(c * 0.38) h), warning-subtle-active: oklch(from var(--kendo-color-warning) 0.9312 calc(c * 0.55) h), warning: oklch(84.22% 0.1727 84.58deg), warning-hover: oklch(from var(--kendo-color-warning) calc(l - 0.055) calc(c - 0.011) h), warning-active: oklch(from var(--kendo-color-warning) calc(l - 0.11) calc(c - 0.0225) h), warning-emphasis: oklch(from var(--kendo-color-warning) calc(l * 0.665 + 0.33) calc(c * 0.83) h), warning-on-subtle: oklch(from var(--kendo-color-warning) calc(l * 0.49) calc(c * 0.49) h), on-warning: oklch(from var(--kendo-color-warning) clamp(0.36, (0.6 - l) * 99999, 1) 0 h), warning-on-surface: oklch(from var(--kendo-color-warning) l c h), error-subtle: oklch(from var(--kendo-color-error) 0.9223 calc(c * 0.14) h), error-subtle-hover: oklch(from var(--kendo-color-error) 0.8762 calc(c * 0.24) h), error-subtle-active: oklch(from var(--kendo-color-error) 0.7533 calc(c * 0.56) h), error: oklch(61.07% 0.2435 30.2deg), error-hover: oklch(from var(--kendo-color-error) calc(l - 0.0377) calc(c - 0.0159) h), error-active: oklch(from var(--kendo-color-error) calc(l - 0.0782) calc(c - 0.0326) h), error-emphasis: oklch(from var(--kendo-color-error) calc(l * 0.61 + 0.33) calc(c * 0.70) h), error-on-subtle: oklch(from var(--kendo-color-error) calc(l * 0.61) calc(c * 0.59) h), on-error: oklch(from var(--kendo-color-error) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), error-on-surface: oklch(from var(--kendo-color-error) calc(l * 0.872) calc(c * 0.866) h), inverse-subtle: oklch(from var(--kendo-color-inverse) calc(l + 0.15) c h), inverse-subtle-hover: oklch(from var(--kendo-color-inverse) calc(l + 0.079) c h), inverse-subtle-active: oklch(from var(--kendo-color-inverse) l c h), inverse: oklch(36% 0 0deg), inverse-hover: oklch(from var(--kendo-color-inverse) calc(l - 0.079) c h), inverse-active: oklch(from var(--kendo-color-inverse) calc(l - 0.121) c h), inverse-emphasis: oklch(from var(--kendo-color-inverse) calc(l + 0.323) c h), inverse-on-subtle: oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), on-inverse: oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), inverse-on-surface: oklch(from var(--kendo-color-inverse) calc(l * 0.53) c h), series: oklch(69.85% 0.1923 27.19deg), series-a: var(--kendo-color-series), series-a-bold: oklch(from var(--kendo-color-series-a) calc(l * 0.81) calc(c * 0.79) h), series-a-bolder: oklch(from var(--kendo-color-series-a) calc(l * 0.61) calc(c * 0.57) h), series-a-subtle: oklch(from var(--kendo-color-series-a) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-a-subtler: oklch(from var(--kendo-color-series-a) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-b: oklch(from var(--kendo-color-series) calc(l + 0.2128) calc(c - 0.0444) calc(h + 68.82)), series-b-bold: oklch(from var(--kendo-color-series-b) calc(l * 0.81) calc(c * 0.79) h), series-b-bolder: oklch(from var(--kendo-color-series-b) calc(l * 0.61) calc(c * 0.57) h), series-b-subtle: oklch(from var(--kendo-color-series-b) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-b-subtler: oklch(from var(--kendo-color-series-b) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-c: oklch(from var(--kendo-color-series) calc(l + 0.0697) calc(c - 0.0281) calc(h + 125.93)), series-c-bold: oklch(from var(--kendo-color-series-c) calc(l * 0.81) calc(c * 0.79) h), series-c-bolder: oklch(from var(--kendo-color-series-c) calc(l * 0.61) calc(c * 0.57) h), series-c-subtle: oklch(from var(--kendo-color-series-c) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-c-subtler: oklch(from var(--kendo-color-series-c) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-d: oklch(from var(--kendo-color-series) calc(l - 0.1323) calc(c + 0.0372) calc(h + 244.06)), series-d-bold: oklch(from var(--kendo-color-series-d) calc(l * 0.81) calc(c * 0.79) h), series-d-bolder: oklch(from var(--kendo-color-series-d) calc(l * 0.61) calc(c * 0.57) h), series-d-subtle: oklch(from var(--kendo-color-series-d) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-d-subtler: oklch(from var(--kendo-color-series-d) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-e: oklch(from var(--kendo-color-series) calc(l - 0.0581) calc(c + 0.0456) calc(h + 276.18)), series-e-bold: oklch(from var(--kendo-color-series-e) calc(l * 0.81) calc(c * 0.79) h), series-e-bolder: oklch(from var(--kendo-color-series-e) calc(l * 0.61) calc(c * 0.57) h), series-e-subtle: oklch(from var(--kendo-color-series-e) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-e-subtler: oklch(from var(--kendo-color-series-e) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-f: oklch(from var(--kendo-color-series) l calc(c + 0.0143) calc(h - 24.38)), series-f-bold: oklch(from var(--kendo-color-series-f) calc(l * 0.81) calc(c * 0.79) h), series-f-bolder: oklch(from var(--kendo-color-series-f) calc(l * 0.61) calc(c * 0.57) h), series-f-subtle: oklch(from var(--kendo-color-series-f) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-f-subtler: oklch(from var(--kendo-color-series-f) calc(l * 0.79 + 0.21) calc(c * 0.77) h))",
+        "prettyValue": {
+            "app-surface": "oklch(100% 0 0deg)",
+            "on-app-surface": "oklch(from var(--kendo-color-app-surface) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "subtle": "oklch(51.03% 0 0deg)",
+            "surface": "oklch(98.51% 0 0deg)",
+            "surface-alt": "oklch(from var(--kendo-color-surface) calc(l + 0.02) c h)",
+            "border": "oklch(0% 0 0deg / 0.08)",
+            "border-alt": "oklch(0% 0 0deg / 0.16)",
+            "base-subtle": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h)",
+            "base-subtle-hover": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.064, (0.6 - l) * 99999, 0.064)) c h)",
+            "base-subtle-active": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h)",
+            "base": "oklch(97.02% 0 0deg)",
+            "base-hover": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h)",
+            "base-active": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h)",
+            "base-emphasis": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.156, (0.6 - l) * 99999, 0.156)) c h)",
+            "base-on-subtle": "oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "on-base": "oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "base-on-surface": "oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "primary-subtle": "oklch(from var(--kendo-color-primary) 0.958 calc(c * 0.11) h)",
+            "primary-subtle-hover": "oklch(from var(--kendo-color-primary) 0.927 calc(c * 0.19) h)",
+            "primary-subtle-active": "oklch(from var(--kendo-color-primary) 0.88 calc(c * 0.33) h)",
+            "primary": "oklch(69.85% 0.1923 27.19deg)",
+            "primary-hover": "oklch(from var(--kendo-color-primary) calc(l - 0.044) calc(c - 0.012) h)",
+            "primary-active": "oklch(from var(--kendo-color-primary) calc(l - 0.088) calc(c - 0.027) h)",
+            "primary-emphasis": "oklch(from var(--kendo-color-primary) calc(l * 0.665 + 0.33) calc(c * 0.61) h)",
+            "primary-on-subtle": "oklch(from var(--kendo-color-primary) calc(l * 0.48) calc(c * 0.47) h)",
+            "on-primary": "oklch(from var(--kendo-color-primary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "primary-on-surface": "oklch(from var(--kendo-color-primary) l c h)",
+            "secondary-subtle": "oklch(from var(--kendo-color-secondary) calc(l * 0.03 + 0.97) calc(c * 0.12) h)",
+            "secondary-subtle-hover": "oklch(from var(--kendo-color-secondary) calc(l * 0.06 + 0.94) calc(c * 0.18) h)",
+            "secondary-subtle-active": "oklch(from var(--kendo-color-secondary) calc(l * 0.12 + 0.88) calc(c * 0.25) h)",
+            "secondary": "oklch(51.03% 0 0deg)",
+            "secondary-hover": "oklch(from var(--kendo-color-secondary) calc(l - 0.072) c h)",
+            "secondary-active": "oklch(from var(--kendo-color-secondary) calc(l - 0.15) c h)",
+            "secondary-emphasis": "oklch(from var(--kendo-color-secondary) calc(l * 0.19 + 0.81) calc(c * 0.55) h)",
+            "secondary-on-subtle": "oklch(from var(--kendo-color-secondary) calc(l * 0.375) c h)",
+            "on-secondary": "oklch(from var(--kendo-color-secondary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "secondary-on-surface": "oklch(from var(--kendo-color-secondary) calc(l * 0.55) c h)",
+            "tertiary-subtle": "oklch(from var(--kendo-color-tertiary) 0.944 calc(c * 0.20) h)",
+            "tertiary-subtle-hover": "oklch(from var(--kendo-color-tertiary) 0.916 calc(c * 0.29) h)",
+            "tertiary-subtle-active": "oklch(from var(--kendo-color-tertiary) 0.872 calc(c * 0.46) h)",
+            "tertiary": "oklch(69.91% 0.157 238.99deg)",
+            "tertiary-hover": "oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.046, (0.6 - l) * 99999, 0.046)) c h)",
+            "tertiary-active": "oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.09, (0.6 - l) * 99999, 0.09)) c h)",
+            "tertiary-emphasis": "oklch(from var(--kendo-color-tertiary) calc(l * 0.665 + 0.33) calc(c * 0.75) h)",
+            "tertiary-on-subtle": "oklch(from var(--kendo-color-tertiary) calc(l * 0.50) calc(c * 0.48) h)",
+            "on-tertiary": "oklch(from var(--kendo-color-tertiary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "tertiary-on-surface": "oklch(from var(--kendo-color-tertiary) calc(l * 0.87) c h)",
+            "info-subtle": "oklch(from var(--kendo-color-info) 0.9086 calc(c * 0.17) h)",
+            "info-subtle-hover": "oklch(from var(--kendo-color-info) 0.8646 calc(c * 0.24) h)",
+            "info-subtle-active": "oklch(from var(--kendo-color-info) 0.7417 calc(c * 0.50) h)",
+            "info": "oklch(51.78% 0.2301 261.43deg)",
+            "info-hover": "oklch(from var(--kendo-color-info) calc(l - 0.0286) calc(c - 0.0164) h)",
+            "info-active": "oklch(from var(--kendo-color-info) calc(l - 0.0624) calc(c - 0.032) h)",
+            "info-emphasis": "oklch(from var(--kendo-color-info) calc(l * 0.68 + 0.33) calc(c * 0.64) h)",
+            "info-on-subtle": "oklch(from var(--kendo-color-info) calc(l * 0.52) calc(c * 0.46) h)",
+            "on-info": "oklch(from var(--kendo-color-info) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "info-on-surface": "oklch(from var(--kendo-color-info) calc(l * 0.88) calc(c * 0.86) h)",
+            "success-subtle": "oklch(from var(--kendo-color-success) 0.9326 calc(c * 0.20) h)",
+            "success-subtle-hover": "oklch(from var(--kendo-color-success) 0.9012 calc(c * 0.30) h)",
+            "success-subtle-active": "oklch(from var(--kendo-color-success) 0.8647 calc(c * 0.42) h)",
+            "success": "oklch(67.45% 0.2171 139.99deg)",
+            "success-hover": "oklch(from var(--kendo-color-success) calc(l - 0.042) calc(c - 0.0137) h)",
+            "success-active": "oklch(from var(--kendo-color-success) calc(l - 0.0847) calc(c - 0.0275) h)",
+            "success-emphasis": "oklch(from var(--kendo-color-success) calc(l * 0.675 + 0.33) calc(c * 0.78) h)",
+            "success-on-subtle": "oklch(from var(--kendo-color-success) calc(l * 0.61) calc(c * 0.60) h)",
+            "on-success": "oklch(from var(--kendo-color-success) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "success-on-surface": "oklch(from var(--kendo-color-success) calc(l * 0.875) calc(c * 0.875) h)",
+            "warning-subtle": "oklch(from var(--kendo-color-warning) 0.9674 calc(c * 0.26) h)",
+            "warning-subtle-hover": "oklch(from var(--kendo-color-warning) 0.9508 calc(c * 0.38) h)",
+            "warning-subtle-active": "oklch(from var(--kendo-color-warning) 0.9312 calc(c * 0.55) h)",
+            "warning": "oklch(84.22% 0.1727 84.58deg)",
+            "warning-hover": "oklch(from var(--kendo-color-warning) calc(l - 0.055) calc(c - 0.011) h)",
+            "warning-active": "oklch(from var(--kendo-color-warning) calc(l - 0.11) calc(c - 0.0225) h)",
+            "warning-emphasis": "oklch(from var(--kendo-color-warning) calc(l * 0.665 + 0.33) calc(c * 0.83) h)",
+            "warning-on-subtle": "oklch(from var(--kendo-color-warning) calc(l * 0.49) calc(c * 0.49) h)",
+            "on-warning": "oklch(from var(--kendo-color-warning) clamp(0.36, (0.6 - l) * 99999, 1) 0 h)",
+            "warning-on-surface": "oklch(from var(--kendo-color-warning) l c h)",
+            "error-subtle": "oklch(from var(--kendo-color-error) 0.9223 calc(c * 0.14) h)",
+            "error-subtle-hover": "oklch(from var(--kendo-color-error) 0.8762 calc(c * 0.24) h)",
+            "error-subtle-active": "oklch(from var(--kendo-color-error) 0.7533 calc(c * 0.56) h)",
+            "error": "oklch(61.07% 0.2435 30.2deg)",
+            "error-hover": "oklch(from var(--kendo-color-error) calc(l - 0.0377) calc(c - 0.0159) h)",
+            "error-active": "oklch(from var(--kendo-color-error) calc(l - 0.0782) calc(c - 0.0326) h)",
+            "error-emphasis": "oklch(from var(--kendo-color-error) calc(l * 0.61 + 0.33) calc(c * 0.70) h)",
+            "error-on-subtle": "oklch(from var(--kendo-color-error) calc(l * 0.61) calc(c * 0.59) h)",
+            "on-error": "oklch(from var(--kendo-color-error) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "error-on-surface": "oklch(from var(--kendo-color-error) calc(l * 0.872) calc(c * 0.866) h)",
+            "inverse-subtle": "oklch(from var(--kendo-color-inverse) calc(l + 0.15) c h)",
+            "inverse-subtle-hover": "oklch(from var(--kendo-color-inverse) calc(l + 0.079) c h)",
+            "inverse-subtle-active": "oklch(from var(--kendo-color-inverse) l c h)",
+            "inverse": "oklch(36% 0 0deg)",
+            "inverse-hover": "oklch(from var(--kendo-color-inverse) calc(l - 0.079) c h)",
+            "inverse-active": "oklch(from var(--kendo-color-inverse) calc(l - 0.121) c h)",
+            "inverse-emphasis": "oklch(from var(--kendo-color-inverse) calc(l + 0.323) c h)",
+            "inverse-on-subtle": "oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "on-inverse": "oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "inverse-on-surface": "oklch(from var(--kendo-color-inverse) calc(l * 0.53) c h)",
+            "series": "oklch(69.85% 0.1923 27.19deg)",
+            "series-a": "var(--kendo-color-series)",
+            "series-a-bold": "oklch(from var(--kendo-color-series-a) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-a-bolder": "oklch(from var(--kendo-color-series-a) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-a-subtle": "oklch(from var(--kendo-color-series-a) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-a-subtler": "oklch(from var(--kendo-color-series-a) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-b": "oklch(from var(--kendo-color-series) calc(l + 0.2128) calc(c - 0.0444) calc(h + 68.82))",
+            "series-b-bold": "oklch(from var(--kendo-color-series-b) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-b-bolder": "oklch(from var(--kendo-color-series-b) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-b-subtle": "oklch(from var(--kendo-color-series-b) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-b-subtler": "oklch(from var(--kendo-color-series-b) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-c": "oklch(from var(--kendo-color-series) calc(l + 0.0697) calc(c - 0.0281) calc(h + 125.93))",
+            "series-c-bold": "oklch(from var(--kendo-color-series-c) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-c-bolder": "oklch(from var(--kendo-color-series-c) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-c-subtle": "oklch(from var(--kendo-color-series-c) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-c-subtler": "oklch(from var(--kendo-color-series-c) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-d": "oklch(from var(--kendo-color-series) calc(l - 0.1323) calc(c + 0.0372) calc(h + 244.06))",
+            "series-d-bold": "oklch(from var(--kendo-color-series-d) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-d-bolder": "oklch(from var(--kendo-color-series-d) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-d-subtle": "oklch(from var(--kendo-color-series-d) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-d-subtler": "oklch(from var(--kendo-color-series-d) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-e": "oklch(from var(--kendo-color-series) calc(l - 0.0581) calc(c + 0.0456) calc(h + 276.18))",
+            "series-e-bold": "oklch(from var(--kendo-color-series-e) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-e-bolder": "oklch(from var(--kendo-color-series-e) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-e-subtle": "oklch(from var(--kendo-color-series-e) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-e-subtler": "oklch(from var(--kendo-color-series-e) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-f": "oklch(from var(--kendo-color-series) l calc(c + 0.0143) calc(h - 24.38))",
+            "series-f-bold": "oklch(from var(--kendo-color-series-f) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-f-bolder": "oklch(from var(--kendo-color-series-f) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-f-subtle": "oklch(from var(--kendo-color-series-f) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-f-subtler": "oklch(from var(--kendo-color-series-f) calc(l * 0.79 + 0.21) calc(c * 0.77) h)"
+        }
+    },
+    "kendo-colors": {
+        "type": "Map",
+        "value": "(app-surface: oklch(100% 0 0deg), on-app-surface: oklch(from var(--kendo-color-app-surface) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), subtle: oklch(51.03% 0 0deg), surface: oklch(98.51% 0 0deg), surface-alt: oklch(from var(--kendo-color-surface) calc(l + 0.02) c h), border: oklch(0% 0 0deg / 0.08), border-alt: oklch(0% 0 0deg / 0.16), base-subtle: oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h), base-subtle-hover: oklch(from var(--kendo-color-base) calc(l + clamp(-0.064, (0.6 - l) * 99999, 0.064)) c h), base-subtle-active: oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h), base: oklch(97.02% 0 0deg), base-hover: oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h), base-active: oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h), base-emphasis: oklch(from var(--kendo-color-base) calc(l + clamp(-0.156, (0.6 - l) * 99999, 0.156)) c h), base-on-subtle: oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), on-base: oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), base-on-surface: oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h), primary-subtle: oklch(from var(--kendo-color-primary) 0.958 calc(c * 0.11) h), primary-subtle-hover: oklch(from var(--kendo-color-primary) 0.927 calc(c * 0.19) h), primary-subtle-active: oklch(from var(--kendo-color-primary) 0.88 calc(c * 0.33) h), primary: oklch(69.85% 0.1923 27.19deg), primary-hover: oklch(from var(--kendo-color-primary) calc(l - 0.044) calc(c - 0.012) h), primary-active: oklch(from var(--kendo-color-primary) calc(l - 0.088) calc(c - 0.027) h), primary-emphasis: oklch(from var(--kendo-color-primary) calc(l * 0.665 + 0.33) calc(c * 0.61) h), primary-on-subtle: oklch(from var(--kendo-color-primary) calc(l * 0.48) calc(c * 0.47) h), on-primary: oklch(from var(--kendo-color-primary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), primary-on-surface: oklch(from var(--kendo-color-primary) l c h), secondary-subtle: oklch(from var(--kendo-color-secondary) calc(l * 0.03 + 0.97) calc(c * 0.12) h), secondary-subtle-hover: oklch(from var(--kendo-color-secondary) calc(l * 0.06 + 0.94) calc(c * 0.18) h), secondary-subtle-active: oklch(from var(--kendo-color-secondary) calc(l * 0.12 + 0.88) calc(c * 0.25) h), secondary: oklch(51.03% 0 0deg), secondary-hover: oklch(from var(--kendo-color-secondary) calc(l - 0.072) c h), secondary-active: oklch(from var(--kendo-color-secondary) calc(l - 0.15) c h), secondary-emphasis: oklch(from var(--kendo-color-secondary) calc(l * 0.19 + 0.81) calc(c * 0.55) h), secondary-on-subtle: oklch(from var(--kendo-color-secondary) calc(l * 0.375) c h), on-secondary: oklch(from var(--kendo-color-secondary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), secondary-on-surface: oklch(from var(--kendo-color-secondary) calc(l * 0.55) c h), tertiary-subtle: oklch(from var(--kendo-color-tertiary) 0.944 calc(c * 0.20) h), tertiary-subtle-hover: oklch(from var(--kendo-color-tertiary) 0.916 calc(c * 0.29) h), tertiary-subtle-active: oklch(from var(--kendo-color-tertiary) 0.872 calc(c * 0.46) h), tertiary: oklch(69.91% 0.157 238.99deg), tertiary-hover: oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.046, (0.6 - l) * 99999, 0.046)) c h), tertiary-active: oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.09, (0.6 - l) * 99999, 0.09)) c h), tertiary-emphasis: oklch(from var(--kendo-color-tertiary) calc(l * 0.665 + 0.33) calc(c * 0.75) h), tertiary-on-subtle: oklch(from var(--kendo-color-tertiary) calc(l * 0.50) calc(c * 0.48) h), on-tertiary: oklch(from var(--kendo-color-tertiary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), tertiary-on-surface: oklch(from var(--kendo-color-tertiary) calc(l * 0.87) c h), info-subtle: oklch(from var(--kendo-color-info) 0.9086 calc(c * 0.17) h), info-subtle-hover: oklch(from var(--kendo-color-info) 0.8646 calc(c * 0.24) h), info-subtle-active: oklch(from var(--kendo-color-info) 0.7417 calc(c * 0.50) h), info: oklch(51.78% 0.2301 261.43deg), info-hover: oklch(from var(--kendo-color-info) calc(l - 0.0286) calc(c - 0.0164) h), info-active: oklch(from var(--kendo-color-info) calc(l - 0.0624) calc(c - 0.032) h), info-emphasis: oklch(from var(--kendo-color-info) calc(l * 0.68 + 0.33) calc(c * 0.64) h), info-on-subtle: oklch(from var(--kendo-color-info) calc(l * 0.52) calc(c * 0.46) h), on-info: oklch(from var(--kendo-color-info) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), info-on-surface: oklch(from var(--kendo-color-info) calc(l * 0.88) calc(c * 0.86) h), success-subtle: oklch(from var(--kendo-color-success) 0.9326 calc(c * 0.20) h), success-subtle-hover: oklch(from var(--kendo-color-success) 0.9012 calc(c * 0.30) h), success-subtle-active: oklch(from var(--kendo-color-success) 0.8647 calc(c * 0.42) h), success: oklch(67.45% 0.2171 139.99deg), success-hover: oklch(from var(--kendo-color-success) calc(l - 0.042) calc(c - 0.0137) h), success-active: oklch(from var(--kendo-color-success) calc(l - 0.0847) calc(c - 0.0275) h), success-emphasis: oklch(from var(--kendo-color-success) calc(l * 0.675 + 0.33) calc(c * 0.78) h), success-on-subtle: oklch(from var(--kendo-color-success) calc(l * 0.61) calc(c * 0.60) h), on-success: oklch(from var(--kendo-color-success) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), success-on-surface: oklch(from var(--kendo-color-success) calc(l * 0.875) calc(c * 0.875) h), warning-subtle: oklch(from var(--kendo-color-warning) 0.9674 calc(c * 0.26) h), warning-subtle-hover: oklch(from var(--kendo-color-warning) 0.9508 calc(c * 0.38) h), warning-subtle-active: oklch(from var(--kendo-color-warning) 0.9312 calc(c * 0.55) h), warning: oklch(84.22% 0.1727 84.58deg), warning-hover: oklch(from var(--kendo-color-warning) calc(l - 0.055) calc(c - 0.011) h), warning-active: oklch(from var(--kendo-color-warning) calc(l - 0.11) calc(c - 0.0225) h), warning-emphasis: oklch(from var(--kendo-color-warning) calc(l * 0.665 + 0.33) calc(c * 0.83) h), warning-on-subtle: oklch(from var(--kendo-color-warning) calc(l * 0.49) calc(c * 0.49) h), on-warning: oklch(from var(--kendo-color-warning) clamp(0.36, (0.6 - l) * 99999, 1) 0 h), warning-on-surface: oklch(from var(--kendo-color-warning) l c h), error-subtle: oklch(from var(--kendo-color-error) 0.9223 calc(c * 0.14) h), error-subtle-hover: oklch(from var(--kendo-color-error) 0.8762 calc(c * 0.24) h), error-subtle-active: oklch(from var(--kendo-color-error) 0.7533 calc(c * 0.56) h), error: oklch(61.07% 0.2435 30.2deg), error-hover: oklch(from var(--kendo-color-error) calc(l - 0.0377) calc(c - 0.0159) h), error-active: oklch(from var(--kendo-color-error) calc(l - 0.0782) calc(c - 0.0326) h), error-emphasis: oklch(from var(--kendo-color-error) calc(l * 0.61 + 0.33) calc(c * 0.70) h), error-on-subtle: oklch(from var(--kendo-color-error) calc(l * 0.61) calc(c * 0.59) h), on-error: oklch(from var(--kendo-color-error) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), error-on-surface: oklch(from var(--kendo-color-error) calc(l * 0.872) calc(c * 0.866) h), inverse-subtle: oklch(from var(--kendo-color-inverse) calc(l + 0.15) c h), inverse-subtle-hover: oklch(from var(--kendo-color-inverse) calc(l + 0.079) c h), inverse-subtle-active: oklch(from var(--kendo-color-inverse) l c h), inverse: oklch(36% 0 0deg), inverse-hover: oklch(from var(--kendo-color-inverse) calc(l - 0.079) c h), inverse-active: oklch(from var(--kendo-color-inverse) calc(l - 0.121) c h), inverse-emphasis: oklch(from var(--kendo-color-inverse) calc(l + 0.323) c h), inverse-on-subtle: oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), on-inverse: oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h), inverse-on-surface: oklch(from var(--kendo-color-inverse) calc(l * 0.53) c h), series: oklch(69.85% 0.1923 27.19deg), series-a: var(--kendo-color-series), series-a-bold: oklch(from var(--kendo-color-series-a) calc(l * 0.81) calc(c * 0.79) h), series-a-bolder: oklch(from var(--kendo-color-series-a) calc(l * 0.61) calc(c * 0.57) h), series-a-subtle: oklch(from var(--kendo-color-series-a) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-a-subtler: oklch(from var(--kendo-color-series-a) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-b: oklch(from var(--kendo-color-series) calc(l + 0.2128) calc(c - 0.0444) calc(h + 68.82)), series-b-bold: oklch(from var(--kendo-color-series-b) calc(l * 0.81) calc(c * 0.79) h), series-b-bolder: oklch(from var(--kendo-color-series-b) calc(l * 0.61) calc(c * 0.57) h), series-b-subtle: oklch(from var(--kendo-color-series-b) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-b-subtler: oklch(from var(--kendo-color-series-b) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-c: oklch(from var(--kendo-color-series) calc(l + 0.0697) calc(c - 0.0281) calc(h + 125.93)), series-c-bold: oklch(from var(--kendo-color-series-c) calc(l * 0.81) calc(c * 0.79) h), series-c-bolder: oklch(from var(--kendo-color-series-c) calc(l * 0.61) calc(c * 0.57) h), series-c-subtle: oklch(from var(--kendo-color-series-c) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-c-subtler: oklch(from var(--kendo-color-series-c) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-d: oklch(from var(--kendo-color-series) calc(l - 0.1323) calc(c + 0.0372) calc(h + 244.06)), series-d-bold: oklch(from var(--kendo-color-series-d) calc(l * 0.81) calc(c * 0.79) h), series-d-bolder: oklch(from var(--kendo-color-series-d) calc(l * 0.61) calc(c * 0.57) h), series-d-subtle: oklch(from var(--kendo-color-series-d) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-d-subtler: oklch(from var(--kendo-color-series-d) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-e: oklch(from var(--kendo-color-series) calc(l - 0.0581) calc(c + 0.0456) calc(h + 276.18)), series-e-bold: oklch(from var(--kendo-color-series-e) calc(l * 0.81) calc(c * 0.79) h), series-e-bolder: oklch(from var(--kendo-color-series-e) calc(l * 0.61) calc(c * 0.57) h), series-e-subtle: oklch(from var(--kendo-color-series-e) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-e-subtler: oklch(from var(--kendo-color-series-e) calc(l * 0.79 + 0.21) calc(c * 0.77) h), series-f: oklch(from var(--kendo-color-series) l calc(c + 0.0143) calc(h - 24.38)), series-f-bold: oklch(from var(--kendo-color-series-f) calc(l * 0.81) calc(c * 0.79) h), series-f-bolder: oklch(from var(--kendo-color-series-f) calc(l * 0.61) calc(c * 0.57) h), series-f-subtle: oklch(from var(--kendo-color-series-f) calc(l * 0.55 + 0.45) calc(c * 0.50) h), series-f-subtler: oklch(from var(--kendo-color-series-f) calc(l * 0.79 + 0.21) calc(c * 0.77) h))",
+        "prettyValue": {
+            "app-surface": "oklch(100% 0 0deg)",
+            "on-app-surface": "oklch(from var(--kendo-color-app-surface) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "subtle": "oklch(51.03% 0 0deg)",
+            "surface": "oklch(98.51% 0 0deg)",
+            "surface-alt": "oklch(from var(--kendo-color-surface) calc(l + 0.02) c h)",
+            "border": "oklch(0% 0 0deg / 0.08)",
+            "border-alt": "oklch(0% 0 0deg / 0.16)",
+            "base-subtle": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h)",
+            "base-subtle-hover": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.064, (0.6 - l) * 99999, 0.064)) c h)",
+            "base-subtle-active": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h)",
+            "base": "oklch(97.02% 0 0deg)",
+            "base-hover": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.03, (0.6 - l) * 99999, 0.03)) c h)",
+            "base-active": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.094, (0.6 - l) * 99999, 0.094)) c h)",
+            "base-emphasis": "oklch(from var(--kendo-color-base) calc(l + clamp(-0.156, (0.6 - l) * 99999, 0.156)) c h)",
+            "base-on-subtle": "oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "on-base": "oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "base-on-surface": "oklch(from var(--kendo-color-base) clamp(0.36, (0.6 - l) * 99999, 0.95) 0 h)",
+            "primary-subtle": "oklch(from var(--kendo-color-primary) 0.958 calc(c * 0.11) h)",
+            "primary-subtle-hover": "oklch(from var(--kendo-color-primary) 0.927 calc(c * 0.19) h)",
+            "primary-subtle-active": "oklch(from var(--kendo-color-primary) 0.88 calc(c * 0.33) h)",
+            "primary": "oklch(69.85% 0.1923 27.19deg)",
+            "primary-hover": "oklch(from var(--kendo-color-primary) calc(l - 0.044) calc(c - 0.012) h)",
+            "primary-active": "oklch(from var(--kendo-color-primary) calc(l - 0.088) calc(c - 0.027) h)",
+            "primary-emphasis": "oklch(from var(--kendo-color-primary) calc(l * 0.665 + 0.33) calc(c * 0.61) h)",
+            "primary-on-subtle": "oklch(from var(--kendo-color-primary) calc(l * 0.48) calc(c * 0.47) h)",
+            "on-primary": "oklch(from var(--kendo-color-primary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "primary-on-surface": "oklch(from var(--kendo-color-primary) l c h)",
+            "secondary-subtle": "oklch(from var(--kendo-color-secondary) calc(l * 0.03 + 0.97) calc(c * 0.12) h)",
+            "secondary-subtle-hover": "oklch(from var(--kendo-color-secondary) calc(l * 0.06 + 0.94) calc(c * 0.18) h)",
+            "secondary-subtle-active": "oklch(from var(--kendo-color-secondary) calc(l * 0.12 + 0.88) calc(c * 0.25) h)",
+            "secondary": "oklch(51.03% 0 0deg)",
+            "secondary-hover": "oklch(from var(--kendo-color-secondary) calc(l - 0.072) c h)",
+            "secondary-active": "oklch(from var(--kendo-color-secondary) calc(l - 0.15) c h)",
+            "secondary-emphasis": "oklch(from var(--kendo-color-secondary) calc(l * 0.19 + 0.81) calc(c * 0.55) h)",
+            "secondary-on-subtle": "oklch(from var(--kendo-color-secondary) calc(l * 0.375) c h)",
+            "on-secondary": "oklch(from var(--kendo-color-secondary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "secondary-on-surface": "oklch(from var(--kendo-color-secondary) calc(l * 0.55) c h)",
+            "tertiary-subtle": "oklch(from var(--kendo-color-tertiary) 0.944 calc(c * 0.20) h)",
+            "tertiary-subtle-hover": "oklch(from var(--kendo-color-tertiary) 0.916 calc(c * 0.29) h)",
+            "tertiary-subtle-active": "oklch(from var(--kendo-color-tertiary) 0.872 calc(c * 0.46) h)",
+            "tertiary": "oklch(69.91% 0.157 238.99deg)",
+            "tertiary-hover": "oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.046, (0.6 - l) * 99999, 0.046)) c h)",
+            "tertiary-active": "oklch(from var(--kendo-color-tertiary) calc(l + clamp(-0.09, (0.6 - l) * 99999, 0.09)) c h)",
+            "tertiary-emphasis": "oklch(from var(--kendo-color-tertiary) calc(l * 0.665 + 0.33) calc(c * 0.75) h)",
+            "tertiary-on-subtle": "oklch(from var(--kendo-color-tertiary) calc(l * 0.50) calc(c * 0.48) h)",
+            "on-tertiary": "oklch(from var(--kendo-color-tertiary) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "tertiary-on-surface": "oklch(from var(--kendo-color-tertiary) calc(l * 0.87) c h)",
+            "info-subtle": "oklch(from var(--kendo-color-info) 0.9086 calc(c * 0.17) h)",
+            "info-subtle-hover": "oklch(from var(--kendo-color-info) 0.8646 calc(c * 0.24) h)",
+            "info-subtle-active": "oklch(from var(--kendo-color-info) 0.7417 calc(c * 0.50) h)",
+            "info": "oklch(51.78% 0.2301 261.43deg)",
+            "info-hover": "oklch(from var(--kendo-color-info) calc(l - 0.0286) calc(c - 0.0164) h)",
+            "info-active": "oklch(from var(--kendo-color-info) calc(l - 0.0624) calc(c - 0.032) h)",
+            "info-emphasis": "oklch(from var(--kendo-color-info) calc(l * 0.68 + 0.33) calc(c * 0.64) h)",
+            "info-on-subtle": "oklch(from var(--kendo-color-info) calc(l * 0.52) calc(c * 0.46) h)",
+            "on-info": "oklch(from var(--kendo-color-info) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "info-on-surface": "oklch(from var(--kendo-color-info) calc(l * 0.88) calc(c * 0.86) h)",
+            "success-subtle": "oklch(from var(--kendo-color-success) 0.9326 calc(c * 0.20) h)",
+            "success-subtle-hover": "oklch(from var(--kendo-color-success) 0.9012 calc(c * 0.30) h)",
+            "success-subtle-active": "oklch(from var(--kendo-color-success) 0.8647 calc(c * 0.42) h)",
+            "success": "oklch(67.45% 0.2171 139.99deg)",
+            "success-hover": "oklch(from var(--kendo-color-success) calc(l - 0.042) calc(c - 0.0137) h)",
+            "success-active": "oklch(from var(--kendo-color-success) calc(l - 0.0847) calc(c - 0.0275) h)",
+            "success-emphasis": "oklch(from var(--kendo-color-success) calc(l * 0.675 + 0.33) calc(c * 0.78) h)",
+            "success-on-subtle": "oklch(from var(--kendo-color-success) calc(l * 0.61) calc(c * 0.60) h)",
+            "on-success": "oklch(from var(--kendo-color-success) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "success-on-surface": "oklch(from var(--kendo-color-success) calc(l * 0.875) calc(c * 0.875) h)",
+            "warning-subtle": "oklch(from var(--kendo-color-warning) 0.9674 calc(c * 0.26) h)",
+            "warning-subtle-hover": "oklch(from var(--kendo-color-warning) 0.9508 calc(c * 0.38) h)",
+            "warning-subtle-active": "oklch(from var(--kendo-color-warning) 0.9312 calc(c * 0.55) h)",
+            "warning": "oklch(84.22% 0.1727 84.58deg)",
+            "warning-hover": "oklch(from var(--kendo-color-warning) calc(l - 0.055) calc(c - 0.011) h)",
+            "warning-active": "oklch(from var(--kendo-color-warning) calc(l - 0.11) calc(c - 0.0225) h)",
+            "warning-emphasis": "oklch(from var(--kendo-color-warning) calc(l * 0.665 + 0.33) calc(c * 0.83) h)",
+            "warning-on-subtle": "oklch(from var(--kendo-color-warning) calc(l * 0.49) calc(c * 0.49) h)",
+            "on-warning": "oklch(from var(--kendo-color-warning) clamp(0.36, (0.6 - l) * 99999, 1) 0 h)",
+            "warning-on-surface": "oklch(from var(--kendo-color-warning) l c h)",
+            "error-subtle": "oklch(from var(--kendo-color-error) 0.9223 calc(c * 0.14) h)",
+            "error-subtle-hover": "oklch(from var(--kendo-color-error) 0.8762 calc(c * 0.24) h)",
+            "error-subtle-active": "oklch(from var(--kendo-color-error) 0.7533 calc(c * 0.56) h)",
+            "error": "oklch(61.07% 0.2435 30.2deg)",
+            "error-hover": "oklch(from var(--kendo-color-error) calc(l - 0.0377) calc(c - 0.0159) h)",
+            "error-active": "oklch(from var(--kendo-color-error) calc(l - 0.0782) calc(c - 0.0326) h)",
+            "error-emphasis": "oklch(from var(--kendo-color-error) calc(l * 0.61 + 0.33) calc(c * 0.70) h)",
+            "error-on-subtle": "oklch(from var(--kendo-color-error) calc(l * 0.61) calc(c * 0.59) h)",
+            "on-error": "oklch(from var(--kendo-color-error) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "error-on-surface": "oklch(from var(--kendo-color-error) calc(l * 0.872) calc(c * 0.866) h)",
+            "inverse-subtle": "oklch(from var(--kendo-color-inverse) calc(l + 0.15) c h)",
+            "inverse-subtle-hover": "oklch(from var(--kendo-color-inverse) calc(l + 0.079) c h)",
+            "inverse-subtle-active": "oklch(from var(--kendo-color-inverse) l c h)",
+            "inverse": "oklch(36% 0 0deg)",
+            "inverse-hover": "oklch(from var(--kendo-color-inverse) calc(l - 0.079) c h)",
+            "inverse-active": "oklch(from var(--kendo-color-inverse) calc(l - 0.121) c h)",
+            "inverse-emphasis": "oklch(from var(--kendo-color-inverse) calc(l + 0.323) c h)",
+            "inverse-on-subtle": "oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "on-inverse": "oklch(from var(--kendo-color-inverse) clamp(0.10, (0.75 - l) * 99999, 1) 0 h)",
+            "inverse-on-surface": "oklch(from var(--kendo-color-inverse) calc(l * 0.53) c h)",
+            "series": "oklch(69.85% 0.1923 27.19deg)",
+            "series-a": "var(--kendo-color-series)",
+            "series-a-bold": "oklch(from var(--kendo-color-series-a) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-a-bolder": "oklch(from var(--kendo-color-series-a) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-a-subtle": "oklch(from var(--kendo-color-series-a) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-a-subtler": "oklch(from var(--kendo-color-series-a) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-b": "oklch(from var(--kendo-color-series) calc(l + 0.2128) calc(c - 0.0444) calc(h + 68.82))",
+            "series-b-bold": "oklch(from var(--kendo-color-series-b) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-b-bolder": "oklch(from var(--kendo-color-series-b) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-b-subtle": "oklch(from var(--kendo-color-series-b) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-b-subtler": "oklch(from var(--kendo-color-series-b) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-c": "oklch(from var(--kendo-color-series) calc(l + 0.0697) calc(c - 0.0281) calc(h + 125.93))",
+            "series-c-bold": "oklch(from var(--kendo-color-series-c) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-c-bolder": "oklch(from var(--kendo-color-series-c) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-c-subtle": "oklch(from var(--kendo-color-series-c) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-c-subtler": "oklch(from var(--kendo-color-series-c) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-d": "oklch(from var(--kendo-color-series) calc(l - 0.1323) calc(c + 0.0372) calc(h + 244.06))",
+            "series-d-bold": "oklch(from var(--kendo-color-series-d) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-d-bolder": "oklch(from var(--kendo-color-series-d) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-d-subtle": "oklch(from var(--kendo-color-series-d) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-d-subtler": "oklch(from var(--kendo-color-series-d) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-e": "oklch(from var(--kendo-color-series) calc(l - 0.0581) calc(c + 0.0456) calc(h + 276.18))",
+            "series-e-bold": "oklch(from var(--kendo-color-series-e) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-e-bolder": "oklch(from var(--kendo-color-series-e) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-e-subtle": "oklch(from var(--kendo-color-series-e) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-e-subtler": "oklch(from var(--kendo-color-series-e) calc(l * 0.79 + 0.21) calc(c * 0.77) h)",
+            "series-f": "oklch(from var(--kendo-color-series) l calc(c + 0.0143) calc(h - 24.38))",
+            "series-f-bold": "oklch(from var(--kendo-color-series-f) calc(l * 0.81) calc(c * 0.79) h)",
+            "series-f-bolder": "oklch(from var(--kendo-color-series-f) calc(l * 0.61) calc(c * 0.57) h)",
+            "series-f-subtle": "oklch(from var(--kendo-color-series-f) calc(l * 0.55 + 0.45) calc(c * 0.50) h)",
+            "series-f-subtler": "oklch(from var(--kendo-color-series-f) calc(l * 0.79 + 0.21) calc(c * 0.77) h)"
+        }
+    },
+    "kendo-color-white": {
+        "type": "Color",
+        "value": "#ffffff"
+    },
+    "kendo-color-black": {
+        "type": "Color",
+        "value": "#000000"
+    },
+    "kendo-color-rgba-transparent": {
+        "type": "Color",
+        "value": "rgba(0, 0, 0, 0)"
+    },
+    "kendo-gradient-transparent-to-black": {
+        "type": "List",
+        "value": "(rgba(0, 0, 0, 0), black)"
+    },
+    "kendo-gradient-transparent-to-white": {
+        "type": "List",
+        "value": "(rgba(255, 255, 255, 0), white)"
+    },
+    "kendo-gradient-black-to-transparent": {
+        "type": "List",
+        "value": "(black, rgba(0, 0, 0, 0))"
+    },
+    "kendo-gradient-white-to-transparent": {
+        "type": "List",
+        "value": "(white, rgba(255, 255, 255, 0))"
+    },
+    "kendo-gradient-rainbow": {
+        "type": "List",
+        "value": "(#ff0000, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000)"
+    },
+    "kendo-scrollbar-width": {
+        "type": "Number",
+        "value": "17px"
+    },
+    "kendo-spacing-base": {
+        "type": "Number",
+        "value": "0.25rem"
+    },
+    "default-spacing": {
+        "type": "Map",
+        "value": "(0: 0px, 1px: 1px, 0.5: calc(0.5 * var(--kendo-spacing-base)), 1: calc(1 * var(--kendo-spacing-base)), 1.5: calc(1.5 * var(--kendo-spacing-base)), 2: calc(2 * var(--kendo-spacing-base)), 2.5: calc(2.5 * var(--kendo-spacing-base)), 3: calc(3 * var(--kendo-spacing-base)), 3.5: calc(3.5 * var(--kendo-spacing-base)), 4: calc(4 * var(--kendo-spacing-base)), 4.5: calc(4.5 * var(--kendo-spacing-base)), 5: calc(5 * var(--kendo-spacing-base)), 5.5: calc(5.5 * var(--kendo-spacing-base)), 6: calc(6 * var(--kendo-spacing-base)), 6.5: calc(6.5 * var(--kendo-spacing-base)), 7: calc(7 * var(--kendo-spacing-base)), 7.5: calc(7.5 * var(--kendo-spacing-base)), 8: calc(8 * var(--kendo-spacing-base)), 9: calc(9 * var(--kendo-spacing-base)), 10: calc(10 * var(--kendo-spacing-base)), 11: calc(11 * var(--kendo-spacing-base)), 12: calc(12 * var(--kendo-spacing-base)), 13: calc(13 * var(--kendo-spacing-base)), 14: calc(14 * var(--kendo-spacing-base)), 15: calc(15 * var(--kendo-spacing-base)), 16: calc(16 * var(--kendo-spacing-base)), 17: calc(17 * var(--kendo-spacing-base)), 18: calc(18 * var(--kendo-spacing-base)), 19: calc(19 * var(--kendo-spacing-base)), 20: calc(20 * var(--kendo-spacing-base)), 21: calc(21 * var(--kendo-spacing-base)), 22: calc(22 * var(--kendo-spacing-base)), 23: calc(23 * var(--kendo-spacing-base)), 24: calc(24 * var(--kendo-spacing-base)))",
+        "prettyValue": {
+            "0": "0px",
+            "1": "calc(1 * var(--kendo-spacing-base))",
+            "2": "calc(2 * var(--kendo-spacing-base))",
+            "3": "calc(3 * var(--kendo-spacing-base))",
+            "4": "calc(4 * var(--kendo-spacing-base))",
+            "5": "calc(5 * var(--kendo-spacing-base))",
+            "6": "calc(6 * var(--kendo-spacing-base))",
+            "7": "calc(7 * var(--kendo-spacing-base))",
+            "8": "calc(8 * var(--kendo-spacing-base))",
+            "9": "calc(9 * var(--kendo-spacing-base))",
+            "10": "calc(10 * var(--kendo-spacing-base))",
+            "11": "calc(11 * var(--kendo-spacing-base))",
+            "12": "calc(12 * var(--kendo-spacing-base))",
+            "13": "calc(13 * var(--kendo-spacing-base))",
+            "14": "calc(14 * var(--kendo-spacing-base))",
+            "15": "calc(15 * var(--kendo-spacing-base))",
+            "16": "calc(16 * var(--kendo-spacing-base))",
+            "17": "calc(17 * var(--kendo-spacing-base))",
+            "18": "calc(18 * var(--kendo-spacing-base))",
+            "19": "calc(19 * var(--kendo-spacing-base))",
+            "20": "calc(20 * var(--kendo-spacing-base))",
+            "21": "calc(21 * var(--kendo-spacing-base))",
+            "22": "calc(22 * var(--kendo-spacing-base))",
+            "23": "calc(23 * var(--kendo-spacing-base))",
+            "24": "calc(24 * var(--kendo-spacing-base))",
+            "1px": "1px",
+            "0.5": "calc(0.5 * var(--kendo-spacing-base))",
+            "1.5": "calc(1.5 * var(--kendo-spacing-base))",
+            "2.5": "calc(2.5 * var(--kendo-spacing-base))",
+            "3.5": "calc(3.5 * var(--kendo-spacing-base))",
+            "4.5": "calc(4.5 * var(--kendo-spacing-base))",
+            "5.5": "calc(5.5 * var(--kendo-spacing-base))",
+            "6.5": "calc(6.5 * var(--kendo-spacing-base))",
+            "7.5": "calc(7.5 * var(--kendo-spacing-base))"
+        }
+    },
+    "kendo-spacing": {
+        "type": "Map",
+        "value": "(0: 0px, 1px: 1px, 0.5: calc(0.5 * var(--kendo-spacing-base)), 1: calc(1 * var(--kendo-spacing-base)), 1.5: calc(1.5 * var(--kendo-spacing-base)), 2: calc(2 * var(--kendo-spacing-base)), 2.5: calc(2.5 * var(--kendo-spacing-base)), 3: calc(3 * var(--kendo-spacing-base)), 3.5: calc(3.5 * var(--kendo-spacing-base)), 4: calc(4 * var(--kendo-spacing-base)), 4.5: calc(4.5 * var(--kendo-spacing-base)), 5: calc(5 * var(--kendo-spacing-base)), 5.5: calc(5.5 * var(--kendo-spacing-base)), 6: calc(6 * var(--kendo-spacing-base)), 6.5: calc(6.5 * var(--kendo-spacing-base)), 7: calc(7 * var(--kendo-spacing-base)), 7.5: calc(7.5 * var(--kendo-spacing-base)), 8: calc(8 * var(--kendo-spacing-base)), 9: calc(9 * var(--kendo-spacing-base)), 10: calc(10 * var(--kendo-spacing-base)), 11: calc(11 * var(--kendo-spacing-base)), 12: calc(12 * var(--kendo-spacing-base)), 13: calc(13 * var(--kendo-spacing-base)), 14: calc(14 * var(--kendo-spacing-base)), 15: calc(15 * var(--kendo-spacing-base)), 16: calc(16 * var(--kendo-spacing-base)), 17: calc(17 * var(--kendo-spacing-base)), 18: calc(18 * var(--kendo-spacing-base)), 19: calc(19 * var(--kendo-spacing-base)), 20: calc(20 * var(--kendo-spacing-base)), 21: calc(21 * var(--kendo-spacing-base)), 22: calc(22 * var(--kendo-spacing-base)), 23: calc(23 * var(--kendo-spacing-base)), 24: calc(24 * var(--kendo-spacing-base)))",
+        "prettyValue": {
+            "0": "0px",
+            "1": "calc(1 * var(--kendo-spacing-base))",
+            "2": "calc(2 * var(--kendo-spacing-base))",
+            "3": "calc(3 * var(--kendo-spacing-base))",
+            "4": "calc(4 * var(--kendo-spacing-base))",
+            "5": "calc(5 * var(--kendo-spacing-base))",
+            "6": "calc(6 * var(--kendo-spacing-base))",
+            "7": "calc(7 * var(--kendo-spacing-base))",
+            "8": "calc(8 * var(--kendo-spacing-base))",
+            "9": "calc(9 * var(--kendo-spacing-base))",
+            "10": "calc(10 * var(--kendo-spacing-base))",
+            "11": "calc(11 * var(--kendo-spacing-base))",
+            "12": "calc(12 * var(--kendo-spacing-base))",
+            "13": "calc(13 * var(--kendo-spacing-base))",
+            "14": "calc(14 * var(--kendo-spacing-base))",
+            "15": "calc(15 * var(--kendo-spacing-base))",
+            "16": "calc(16 * var(--kendo-spacing-base))",
+            "17": "calc(17 * var(--kendo-spacing-base))",
+            "18": "calc(18 * var(--kendo-spacing-base))",
+            "19": "calc(19 * var(--kendo-spacing-base))",
+            "20": "calc(20 * var(--kendo-spacing-base))",
+            "21": "calc(21 * var(--kendo-spacing-base))",
+            "22": "calc(22 * var(--kendo-spacing-base))",
+            "23": "calc(23 * var(--kendo-spacing-base))",
+            "24": "calc(24 * var(--kendo-spacing-base))",
+            "1px": "1px",
+            "0.5": "calc(0.5 * var(--kendo-spacing-base))",
+            "1.5": "calc(1.5 * var(--kendo-spacing-base))",
+            "2.5": "calc(2.5 * var(--kendo-spacing-base))",
+            "3.5": "calc(3.5 * var(--kendo-spacing-base))",
+            "4.5": "calc(4.5 * var(--kendo-spacing-base))",
+            "5.5": "calc(5.5 * var(--kendo-spacing-base))",
+            "6.5": "calc(6.5 * var(--kendo-spacing-base))",
+            "7.5": "calc(7.5 * var(--kendo-spacing-base))"
+        }
+    },
+    "default-elevation": {
+        "type": "Map",
+        "value": "(1: 0 2px 3px rgba(0, 0, 0, 0.04), 2: (0 4px 6px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.12)), 3: (0 6px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.12)), 4: (0 8px 10px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.12)), 5: (0 14px 16px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.12)))",
+        "prettyValue": {
+            "1": "(0 2px 3px rgba(0, 0, 0, 0.04))",
+            "2": "(0 4px 6px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.12))",
+            "3": "(0 6px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.12))",
+            "4": "(0 8px 10px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.12))",
+            "5": "(0 14px 16px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.12))"
+        }
+    },
+    "kendo-elevation": {
+        "type": "Map",
+        "value": "(1: 0 2px 3px rgba(0, 0, 0, 0.04), 2: (0 4px 6px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.12)), 3: (0 6px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.12)), 4: (0 8px 10px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.12)), 5: (0 14px 16px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.12)))",
+        "prettyValue": {
+            "1": "(0 2px 3px rgba(0, 0, 0, 0.04))",
+            "2": "(0 4px 6px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.12))",
+            "3": "(0 6px 8px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.12))",
+            "4": "(0 8px 10px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.12))",
+            "5": "(0 14px 16px rgba(0, 0, 0, 0.24), 0 4px 16px rgba(0, 0, 0, 0.12))"
+        }
+    },
+    "kendo-elevation-bg-lightness-step": {
+        "type": "Number",
+        "value": "0.015"
+    },
+    "kendo-elevation-bg-chroma-step": {
+        "type": "Number",
+        "value": "0.001"
+    },
+    "kendo-translucency-base": {
+        "type": "Number",
+        "value": "0%"
+    },
+    "kendo-translucency-blur-base": {
+        "type": "Number",
+        "value": "6px"
+    },
+    "kendo-translucency-blur-step": {
+        "type": "Number",
+        "value": "2px"
+    },
+    "kendo-font-size": {
+        "type": "Number",
+        "value": "0.875rem"
+    },
+    "kendo-font-size-xxs": {
+        "type": "Number",
+        "value": "0.5rem"
+    },
+    "kendo-font-size-xs": {
+        "type": "Number",
+        "value": "0.625rem"
+    },
+    "kendo-font-size-sm": {
+        "type": "Number",
+        "value": "0.75rem"
+    },
+    "kendo-font-size-md": {
+        "type": "Number",
+        "value": "0.875rem"
+    },
+    "kendo-font-size-lg": {
+        "type": "Number",
+        "value": "1rem"
+    },
+    "kendo-font-size-xl": {
+        "type": "Number",
+        "value": "1.25rem"
+    },
+    "kendo-line-height": {
+        "type": "Number",
+        "value": "1.4285714285714286"
+    },
+    "kendo-line-height-xs": {
+        "type": "Number",
+        "value": "1"
+    },
+    "kendo-line-height-sm": {
+        "type": "Number",
+        "value": "1.25"
+    },
+    "kendo-line-height-md": {
+        "type": "Number",
+        "value": "1.4285714285714286"
+    },
+    "kendo-line-height-lg": {
+        "type": "Number",
+        "value": "1.5"
+    },
+    "kendo-line-height-em": {
+        "type": "Calculation",
+        "value": "calc(1.4285714286 * 1em)"
+    },
+    "kendo-font-weight": {
+        "type": "Number",
+        "value": "400"
+    },
+    "kendo-font-weight-thin": {
+        "type": "Number",
+        "value": "100"
+    },
+    "kendo-font-weight-extra-light": {
+        "type": "Number",
+        "value": "200"
+    },
+    "kendo-font-weight-light": {
+        "type": "Number",
+        "value": "300"
+    },
+    "kendo-font-weight-normal": {
+        "type": "Number",
+        "value": "400"
+    },
+    "kendo-font-weight-medium": {
+        "type": "Number",
+        "value": "500"
+    },
+    "kendo-font-weight-semibold": {
+        "type": "Number",
+        "value": "600"
+    },
+    "kendo-font-weight-bold": {
+        "type": "Number",
+        "value": "700"
+    },
+    "kendo-font-weight-extra-bold": {
+        "type": "Number",
+        "value": "800"
+    },
+    "kendo-font-weight-black": {
+        "type": "Number",
+        "value": "900"
+    },
+    "kendo-letter-spacing": {
+        "type": "Null",
+        "value": "null"
+    },
+    "kendo-letter-spacing-tightest": {
+        "type": "Number",
+        "value": "-0.15px"
+    },
+    "kendo-letter-spacing-tighter": {
+        "type": "Number",
+        "value": "-0.1px"
+    },
+    "kendo-letter-spacing-tight": {
+        "type": "Number",
+        "value": "-0.5px"
+    },
+    "kendo-letter-spacing-normal": {
+        "type": "Number",
+        "value": "0px"
+    },
+    "kendo-letter-spacing-wide": {
+        "type": "Number",
+        "value": "0.5px"
+    },
+    "kendo-letter-spacing-wider": {
+        "type": "Number",
+        "value": "0.1px"
+    },
+    "kendo-letter-spacing-widest": {
+        "type": "Number",
+        "value": "0.15px"
+    },
+    "kendo-font-family-sans": {
+        "type": "List",
+        "value": "(Arial, Verdana, Tahoma, \"Trebuchet MS\", Helvetica, Impact, Gill Sans)"
+    },
+    "kendo-font-family-serif": {
+        "type": "List",
+        "value": "(\"Times New Roman\", Georgia, Garamond, Palatino, Baskerville)"
+    },
+    "kendo-font-family-sans-serif": {
+        "type": "List",
+        "value": "(system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\")"
+    },
+    "kendo-font-family-monospace": {
+        "type": "List",
+        "value": "(SFMono-Regular, Menlo, Monaco, Consolas, \"Roboto Mono\", \"Ubuntu Mono\", \"Lucida Console\", \"Courier New\", monospace)"
+    },
+    "kendo-font-family": {
+        "type": "String",
+        "value": "inherit"
+    },
+    "default-font-sizes": {
+        "type": "Map",
+        "value": "(xxs: 0.5rem, xs: 0.625rem, sm: 0.75rem, md: 0.875rem, lg: 1rem, xl: 1.25rem)",
+        "prettyValue": {
+            "xxs": "0.5rem",
+            "xs": "0.625rem",
+            "sm": "0.75rem",
+            "md": "0.875rem",
+            "lg": "1rem",
+            "xl": "1.25rem"
+        }
+    },
+    "default-line-heights": {
+        "type": "Map",
+        "value": "(xs: 1, sm: 1.25, md: 1.4285714285714286, lg: 1.5)",
+        "prettyValue": {
+            "xs": 1,
+            "sm": 1.25,
+            "md": 1.4285714285714286,
+            "lg": 1.5
+        }
+    },
+    "default-font-weights": {
+        "type": "Map",
+        "value": "(thin: 100, extra-light: 200, light: 300, normal: 400, medium: 500, semibold: 600, bold: 700, extra-bold: 800, \"black\": 900)",
+        "prettyValue": {
+            "thin": 100,
+            "extra-light": 200,
+            "light": 300,
+            "normal": 400,
+            "medium": 500,
+            "semibold": 600,
+            "bold": 700,
+            "extra-bold": 800,
+            "black": 900
+        }
+    },
+    "default-letter-spacings": {
+        "type": "Map",
+        "value": "(tightest: -0.15px, tighter: -0.1px, tight: -0.5px, normal: 0px, wide: 0.5px, wider: 0.1px, widest: 0.15px)",
+        "prettyValue": {
+            "tightest": "-0.15px",
+            "tighter": "-0.1px",
+            "tight": "-0.5px",
+            "normal": "0px",
+            "wide": "0.5px",
+            "wider": "0.1px",
+            "widest": "0.15px"
+        }
+    },
+    "default-font-families": {
+        "type": "Map",
+        "value": "(sans: (Arial, Verdana, Tahoma, \"Trebuchet MS\", Helvetica, Impact, Gill Sans), serif: (\"Times New Roman\", Georgia, Garamond, Palatino, Baskerville), sans-serif: (system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"), monospace: (SFMono-Regular, Menlo, Monaco, Consolas, \"Roboto Mono\", \"Ubuntu Mono\", \"Lucida Console\", \"Courier New\", monospace))",
+        "prettyValue": {
+            "sans": "(Arial, Verdana, Tahoma, \"Trebuchet MS\", Helvetica, Impact, Gill Sans)",
+            "serif": "(\"Times New Roman\", Georgia, Garamond, Palatino, Baskerville)",
+            "sans-serif": "(system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\")",
+            "monospace": "(SFMono-Regular, Menlo, Monaco, Consolas, \"Roboto Mono\", \"Ubuntu Mono\", \"Lucida Console\", \"Courier New\", monospace)"
+        }
+    },
+    "kendo-font-sizes": {
+        "type": "Map",
+        "value": "(xxs: 0.5rem, xs: 0.625rem, sm: 0.75rem, md: 0.875rem, lg: 1rem, xl: 1.25rem)",
+        "prettyValue": {
+            "xxs": "0.5rem",
+            "xs": "0.625rem",
+            "sm": "0.75rem",
+            "md": "0.875rem",
+            "lg": "1rem",
+            "xl": "1.25rem"
+        }
+    },
+    "kendo-line-heights": {
+        "type": "Map",
+        "value": "(xs: 1, sm: 1.25, md: 1.4285714285714286, lg: 1.5)",
+        "prettyValue": {
+            "xs": 1,
+            "sm": 1.25,
+            "md": 1.4285714285714286,
+            "lg": 1.5
+        }
+    },
+    "kendo-font-weights": {
+        "type": "Map",
+        "value": "(thin: 100, extra-light: 200, light: 300, normal: 400, medium: 500, semibold: 600, bold: 700, extra-bold: 800, \"black\": 900)",
+        "prettyValue": {
+            "thin": 100,
+            "extra-light": 200,
+            "light": 300,
+            "normal": 400,
+            "medium": 500,
+            "semibold": 600,
+            "bold": 700,
+            "extra-bold": 800,
+            "black": 900
+        }
+    },
+    "kendo-letter-spacings": {
+        "type": "Map",
+        "value": "(tightest: -0.15px, tighter: -0.1px, tight: -0.5px, normal: 0px, wide: 0.5px, wider: 0.1px, widest: 0.15px)",
+        "prettyValue": {
+            "tightest": "-0.15px",
+            "tighter": "-0.1px",
+            "tight": "-0.5px",
+            "normal": "0px",
+            "wide": "0.5px",
+            "wider": "0.1px",
+            "widest": "0.15px"
+        }
+    },
+    "kendo-font-families": {
+        "type": "Map",
+        "value": "(sans: (Arial, Verdana, Tahoma, \"Trebuchet MS\", Helvetica, Impact, Gill Sans), serif: (\"Times New Roman\", Georgia, Garamond, Palatino, Baskerville), sans-serif: (system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"), monospace: (SFMono-Regular, Menlo, Monaco, Consolas, \"Roboto Mono\", \"Ubuntu Mono\", \"Lucida Console\", \"Courier New\", monospace))",
+        "prettyValue": {
+            "sans": "(Arial, Verdana, Tahoma, \"Trebuchet MS\", Helvetica, Impact, Gill Sans)",
+            "serif": "(\"Times New Roman\", Georgia, Garamond, Palatino, Baskerville)",
+            "sans-serif": "(system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\")",
+            "monospace": "(SFMono-Regular, Menlo, Monaco, Consolas, \"Roboto Mono\", \"Ubuntu Mono\", \"Lucida Console\", \"Courier New\", monospace)"
+        }
+    },
+    "kendo-border-radius-base": {
+        "type": "Number",
+        "value": "0.25rem"
+    },
+    "kendo-border-radius-none": {
+        "type": "Number",
+        "value": "0px"
+    },
+    "kendo-border-radius-xs": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 0.25)"
+    },
+    "kendo-border-radius-sm": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 0.5)"
+    },
+    "kendo-border-radius-md": {
+        "type": "String",
+        "value": "var(--kendo-border-radius-base)"
+    },
+    "kendo-border-radius-lg": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 1.5)"
+    },
+    "kendo-border-radius-xl": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 2)"
+    },
+    "kendo-border-radius-xxl": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 3)"
+    },
+    "kendo-border-radius-xxxl": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 4)"
+    },
+    "kendo-border-radius-full": {
+        "type": "Calculation",
+        "value": "calc(var(--kendo-border-radius-base) * 9999)"
+    },
+    "default-border-radii": {
+        "type": "Map",
+        "value": "(none: 0px, xs: calc(var(--kendo-border-radius-base) * 0.25), sm: calc(var(--kendo-border-radius-base) * 0.5), md: var(--kendo-border-radius-base), lg: calc(var(--kendo-border-radius-base) * 1.5), xl: calc(var(--kendo-border-radius-base) * 2), xxl: calc(var(--kendo-border-radius-base) * 3), xxxl: calc(var(--kendo-border-radius-base) * 4), full: calc(var(--kendo-border-radius-base) * 9999))",
+        "prettyValue": {
+            "none": "0px",
+            "xs": "calc(var(--kendo-border-radius-base) * 0.25)",
+            "sm": "calc(var(--kendo-border-radius-base) * 0.5)",
+            "md": "var(--kendo-border-radius-base)",
+            "lg": "calc(var(--kendo-border-radius-base) * 1.5)",
+            "xl": "calc(var(--kendo-border-radius-base) * 2)",
+            "xxl": "calc(var(--kendo-border-radius-base) * 3)",
+            "xxxl": "calc(var(--kendo-border-radius-base) * 4)",
+            "full": "calc(var(--kendo-border-radius-base) * 9999)"
+        }
+    },
+    "kendo-border-radii": {
+        "type": "Map",
+        "value": "(none: 0px, xs: calc(var(--kendo-border-radius-base) * 0.25), sm: calc(var(--kendo-border-radius-base) * 0.5), md: var(--kendo-border-radius-base), lg: calc(var(--kendo-border-radius-base) * 1.5), xl: calc(var(--kendo-border-radius-base) * 2), xxl: calc(var(--kendo-border-radius-base) * 3), xxxl: calc(var(--kendo-border-radius-base) * 4), full: calc(var(--kendo-border-radius-base) * 9999))",
+        "prettyValue": {
+            "none": "0px",
+            "xs": "calc(var(--kendo-border-radius-base) * 0.25)",
+            "sm": "calc(var(--kendo-border-radius-base) * 0.5)",
+            "md": "var(--kendo-border-radius-base)",
+            "lg": "calc(var(--kendo-border-radius-base) * 1.5)",
+            "xl": "calc(var(--kendo-border-radius-base) * 2)",
+            "xxl": "calc(var(--kendo-border-radius-base) * 3)",
+            "xxxl": "calc(var(--kendo-border-radius-base) * 4)",
+            "full": "calc(var(--kendo-border-radius-base) * 9999)"
+        }
+    },
+    "default-easings": {
+        "type": "Map",
+        "value": "(linear: cubic-bezier(0, 0, 1, 1), accelerate: cubic-bezier(0.42, 0, 1, 1), decelerate: cubic-bezier(0, 0, 0.58, 1), standard: cubic-bezier(0.42, 0, 0.58, 1), sharp: cubic-bezier(0.75, 0, 0.25, 1), bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55), elastic: cubic-bezier(0.5, -0.5, 0.5, 1.5), stretchy: cubic-bezier(0.07, 1.81, 0.3, 0.81))",
+        "prettyValue": {
+            "linear": "cubic-bezier(0, 0, 1, 1)",
+            "accelerate": "cubic-bezier(0.42, 0, 1, 1)",
+            "decelerate": "cubic-bezier(0, 0, 0.58, 1)",
+            "standard": "cubic-bezier(0.42, 0, 0.58, 1)",
+            "sharp": "cubic-bezier(0.75, 0, 0.25, 1)",
+            "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "elastic": "cubic-bezier(0.5, -0.5, 0.5, 1.5)",
+            "stretchy": "cubic-bezier(0.07, 1.81, 0.3, 0.81)"
+        }
+    },
+    "default-durations": {
+        "type": "Map",
+        "value": "(instant: 0ms, immediate: 50ms, brief: 100ms, quick: 150ms, rapid: 200ms, swift: 250ms, speedy: 300ms, brisk: 350ms, prompt: 400ms, timely: 450ms, moderate: 500ms, measured: 550ms, steady: 600ms, leisurely: 700ms, slow: 800ms, languid: 900ms, sluggish: 1000ms)",
+        "prettyValue": {
+            "instant": "0ms",
+            "immediate": "50ms",
+            "brief": "100ms",
+            "quick": "150ms",
+            "rapid": "200ms",
+            "swift": "250ms",
+            "speedy": "300ms",
+            "brisk": "350ms",
+            "prompt": "400ms",
+            "timely": "450ms",
+            "moderate": "500ms",
+            "measured": "550ms",
+            "steady": "600ms",
+            "leisurely": "700ms",
+            "slow": "800ms",
+            "languid": "900ms",
+            "sluggish": "1000ms"
+        }
+    },
+    "default-transitions": {
+        "type": "Map",
+        "value": "(instant: (duration: var(--kendo-duration-instant), easing: var(--kendo-easing-linear)), rapid: (duration: var(--kendo-duration-quick), easing: var(--kendo-easing-decelerate)), snappy: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-decelerate)), energetic: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-elastic)), bouncy: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-bounce)), subtle: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-standard)), gentle: (duration: var(--kendo-duration-prompt), easing: var(--kendo-easing-accelerate)), enter: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-decelerate)), exit: (duration: var(--kendo-duration-rapid), easing: var(--kendo-easing-accelerate)), settle: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-decelerate)), scale-out: (duration: var(--kendo-duration-quick), easing: var(--kendo-easing-accelerate)), scale-in: (duration: var(--kendo-duration-rapid), easing: var(--kendo-easing-decelerate)), fade-out: (duration: var(--kendo-duration-rapid), easing: var(--kendo-easing-standard)), fade-in: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-standard)), slide-out: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-accelerate)), slide-in: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-decelerate)), emphasis: (duration: var(--kendo-duration-quick), easing: var(--kendo-easing-sharp)), collapse: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-accelerate)), expand: (duration: var(--kendo-duration-prompt), easing: var(--kendo-easing-standard)), shrink: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-accelerate)), grow: (duration: var(--kendo-duration-prompt), easing: var(--kendo-easing-standard)), pulse: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-standard)), smooth: (duration: var(--kendo-duration-moderate), easing: var(--kendo-easing-standard)), flip: (duration: var(--kendo-duration-measured), easing: var(--kendo-easing-standard)), fluid: (duration: var(--kendo-duration-steady), easing: var(--kendo-easing-standard)), deliberate: (duration: var(--kendo-duration-slow), easing: var(--kendo-easing-standard)))",
+        "prettyValue": {
+            "instant": {
+                "duration": "var(--kendo-duration-instant)",
+                "easing": "var(--kendo-easing-linear)"
+            },
+            "rapid": {
+                "duration": "var(--kendo-duration-quick)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "snappy": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "energetic": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-elastic)"
+            },
+            "bouncy": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-bounce)"
+            },
+            "subtle": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "gentle": {
+                "duration": "var(--kendo-duration-prompt)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "enter": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "exit": {
+                "duration": "var(--kendo-duration-rapid)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "settle": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "scale-out": {
+                "duration": "var(--kendo-duration-quick)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "scale-in": {
+                "duration": "var(--kendo-duration-rapid)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "fade-out": {
+                "duration": "var(--kendo-duration-rapid)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "fade-in": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "slide-out": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "slide-in": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "emphasis": {
+                "duration": "var(--kendo-duration-quick)",
+                "easing": "var(--kendo-easing-sharp)"
+            },
+            "collapse": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "expand": {
+                "duration": "var(--kendo-duration-prompt)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "shrink": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "grow": {
+                "duration": "var(--kendo-duration-prompt)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "pulse": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "smooth": {
+                "duration": "var(--kendo-duration-moderate)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "flip": {
+                "duration": "var(--kendo-duration-measured)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "fluid": {
+                "duration": "var(--kendo-duration-steady)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "deliberate": {
+                "duration": "var(--kendo-duration-slow)",
+                "easing": "var(--kendo-easing-standard)"
+            }
+        }
+    },
+    "kendo-easings": {
+        "type": "Map",
+        "value": "(linear: cubic-bezier(0, 0, 1, 1), accelerate: cubic-bezier(0.42, 0, 1, 1), decelerate: cubic-bezier(0, 0, 0.58, 1), standard: cubic-bezier(0.42, 0, 0.58, 1), sharp: cubic-bezier(0.75, 0, 0.25, 1), bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55), elastic: cubic-bezier(0.5, -0.5, 0.5, 1.5), stretchy: cubic-bezier(0.07, 1.81, 0.3, 0.81))",
+        "prettyValue": {
+            "linear": "cubic-bezier(0, 0, 1, 1)",
+            "accelerate": "cubic-bezier(0.42, 0, 1, 1)",
+            "decelerate": "cubic-bezier(0, 0, 0.58, 1)",
+            "standard": "cubic-bezier(0.42, 0, 0.58, 1)",
+            "sharp": "cubic-bezier(0.75, 0, 0.25, 1)",
+            "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+            "elastic": "cubic-bezier(0.5, -0.5, 0.5, 1.5)",
+            "stretchy": "cubic-bezier(0.07, 1.81, 0.3, 0.81)"
+        }
+    },
+    "kendo-durations": {
+        "type": "Map",
+        "value": "(instant: 0ms, immediate: 50ms, brief: 100ms, quick: 150ms, rapid: 200ms, swift: 250ms, speedy: 300ms, brisk: 350ms, prompt: 400ms, timely: 450ms, moderate: 500ms, measured: 550ms, steady: 600ms, leisurely: 700ms, slow: 800ms, languid: 900ms, sluggish: 1000ms)",
+        "prettyValue": {
+            "instant": "0ms",
+            "immediate": "50ms",
+            "brief": "100ms",
+            "quick": "150ms",
+            "rapid": "200ms",
+            "swift": "250ms",
+            "speedy": "300ms",
+            "brisk": "350ms",
+            "prompt": "400ms",
+            "timely": "450ms",
+            "moderate": "500ms",
+            "measured": "550ms",
+            "steady": "600ms",
+            "leisurely": "700ms",
+            "slow": "800ms",
+            "languid": "900ms",
+            "sluggish": "1000ms"
+        }
+    },
+    "kendo-transitions": {
+        "type": "Map",
+        "value": "(instant: (duration: var(--kendo-duration-instant), easing: var(--kendo-easing-linear)), rapid: (duration: var(--kendo-duration-quick), easing: var(--kendo-easing-decelerate)), snappy: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-decelerate)), energetic: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-elastic)), bouncy: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-bounce)), subtle: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-standard)), gentle: (duration: var(--kendo-duration-prompt), easing: var(--kendo-easing-accelerate)), enter: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-decelerate)), exit: (duration: var(--kendo-duration-rapid), easing: var(--kendo-easing-accelerate)), settle: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-decelerate)), scale-out: (duration: var(--kendo-duration-quick), easing: var(--kendo-easing-accelerate)), scale-in: (duration: var(--kendo-duration-rapid), easing: var(--kendo-easing-decelerate)), fade-out: (duration: var(--kendo-duration-rapid), easing: var(--kendo-easing-standard)), fade-in: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-standard)), slide-out: (duration: var(--kendo-duration-swift), easing: var(--kendo-easing-accelerate)), slide-in: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-decelerate)), emphasis: (duration: var(--kendo-duration-quick), easing: var(--kendo-easing-sharp)), collapse: (duration: var(--kendo-duration-speedy), easing: var(--kendo-easing-accelerate)), expand: (duration: var(--kendo-duration-prompt), easing: var(--kendo-easing-standard)), shrink: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-accelerate)), grow: (duration: var(--kendo-duration-prompt), easing: var(--kendo-easing-standard)), pulse: (duration: var(--kendo-duration-brisk), easing: var(--kendo-easing-standard)), smooth: (duration: var(--kendo-duration-moderate), easing: var(--kendo-easing-standard)), flip: (duration: var(--kendo-duration-measured), easing: var(--kendo-easing-standard)), fluid: (duration: var(--kendo-duration-steady), easing: var(--kendo-easing-standard)), deliberate: (duration: var(--kendo-duration-slow), easing: var(--kendo-easing-standard)))",
+        "prettyValue": {
+            "instant": {
+                "duration": "var(--kendo-duration-instant)",
+                "easing": "var(--kendo-easing-linear)"
+            },
+            "rapid": {
+                "duration": "var(--kendo-duration-quick)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "snappy": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "energetic": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-elastic)"
+            },
+            "bouncy": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-bounce)"
+            },
+            "subtle": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "gentle": {
+                "duration": "var(--kendo-duration-prompt)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "enter": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "exit": {
+                "duration": "var(--kendo-duration-rapid)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "settle": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "scale-out": {
+                "duration": "var(--kendo-duration-quick)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "scale-in": {
+                "duration": "var(--kendo-duration-rapid)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "fade-out": {
+                "duration": "var(--kendo-duration-rapid)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "fade-in": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "slide-out": {
+                "duration": "var(--kendo-duration-swift)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "slide-in": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-decelerate)"
+            },
+            "emphasis": {
+                "duration": "var(--kendo-duration-quick)",
+                "easing": "var(--kendo-easing-sharp)"
+            },
+            "collapse": {
+                "duration": "var(--kendo-duration-speedy)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "expand": {
+                "duration": "var(--kendo-duration-prompt)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "shrink": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-accelerate)"
+            },
+            "grow": {
+                "duration": "var(--kendo-duration-prompt)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "pulse": {
+                "duration": "var(--kendo-duration-brisk)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "smooth": {
+                "duration": "var(--kendo-duration-moderate)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "flip": {
+                "duration": "var(--kendo-duration-measured)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "fluid": {
+                "duration": "var(--kendo-duration-steady)",
+                "easing": "var(--kendo-easing-standard)"
+            },
+            "deliberate": {
+                "duration": "var(--kendo-duration-slow)",
+                "easing": "var(--kendo-easing-standard)"
+            }
+        }
+    },
+    "kendo-z-step": {
+        "type": "Number",
+        "value": "1"
+    },
+    "kendo-z-layers": {
+        "type": "Map",
+        "value": "(bottom: -1, base: 0, handle: 10, selection: 100, badge: 300, animation: 600, banner: 1000, floating: 5000, overlay: 10000, drawer: 11000, modal: 11500, popup: 12000, loading: 20000, top: 100000, scroll: 200000)",
+        "prettyValue": {
+            "bottom": -1,
+            "base": 0,
+            "handle": 10,
+            "selection": 100,
+            "badge": 300,
+            "animation": 600,
+            "banner": 1000,
+            "floating": 5000,
+            "overlay": 10000,
+            "drawer": 11000,
+            "modal": 11500,
+            "popup": 12000,
+            "loading": 20000,
+            "top": 100000,
+            "scroll": 200000
+        }
+    },
+    "kendo-prefix": {
+        "type": "String",
+        "value": "k-"
+    }
+}

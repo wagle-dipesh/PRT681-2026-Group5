@@ -1,0 +1,10 @@
+@model StatusCodeViewModel
+@{
+    ViewData["Title"] = "Error " + Model.StatusCode;
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-danger">@Model.StatusCode</h1>
+    <p class="lead">@Model.Message</p>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Go to Home</a>
+</div>
