@@ -1,0 +1,37 @@
+services:
+  db:
+    image: postgres:16
+    container_name: taskmanager-db
+    environment:
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: TaskManagerMvcDb
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+    volumes:
+      - taskmanager-db-data:/var/lib/postgresql/data
+      - ./Database:/docker-entrypoint-initdb.d:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 2s
+      timeout: 5s
+      retries: 10
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: taskmanager-web
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ConnectionStrings__DefaultConnection: "Host=db;Port=5432;Database=TaskManagerMvcDb;Username=postgres;Password=${DB_PASSWORD:-postgres};"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  taskmanager-db-data:
