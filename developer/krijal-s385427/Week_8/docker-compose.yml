@@ -26,5 +26,18 @@ services:
       - sqlserver
     restart: on-failure
 
+  frontend:
+    build:
+      context: ./task-manager-client
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: "http://localhost:8080/api/tasks"
+    container_name: taskmanager-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: on-failure
+
 volumes:
   taskmanager-sql-data:
