@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@progress/kendo-data-query": "^1.7.4",
+    "@progress/kendo-licensing": "^1.11.3",
     "@progress/kendo-react-buttons": "^16.1.0",
     "@progress/kendo-react-data-tools": "^16.1.0",
     "@progress/kendo-react-grid": "^16.1.0",
