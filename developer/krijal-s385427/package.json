@@ -1,7 +1,11 @@
 {
   "dependencies": {
+    "@progress/kendo-data-query": "^1.7.4",
     "@progress/kendo-react-buttons": "^16.1.0",
+    "@progress/kendo-react-data-tools": "^16.1.0",
+    "@progress/kendo-react-grid": "^16.1.0",
     "@progress/kendo-react-inputs": "^16.1.0",
+    "@progress/kendo-react-intl": "^16.1.0",
     "@progress/kendo-theme-default": "^14.5.0"
   }
 }
