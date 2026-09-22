@@ -3,7 +3,9 @@ import { Button } from '@progress/kendo-react-buttons'
 import { TextArea, TextBox } from '@progress/kendo-react-inputs'
 import './App.css'
 
-const API_URL = 'http://localhost:5150/api/tasks'
+// const API_URL = 'http://localhost:5150/api/tasks'
+const API_URL =
+  import.meta.env.VITE_API_URL || 'http://localhost:5150/api/tasks'
 
 function App() {
   const [tasks, setTasks] = useState([])
