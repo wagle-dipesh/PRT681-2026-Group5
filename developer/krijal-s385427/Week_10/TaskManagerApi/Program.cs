@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using Temporalio.Client;
+using Temporalio.Extensions.Hosting;
 using TaskManagerApi.Data;
 using TaskManagerApi.Middleware;
 using TaskManagerApi.Models;
 using TaskManagerApi.Services;
 using TaskManagerApi.Settings;
+using TaskManagerApi.Workflows;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,11 +29,34 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
 
-// Configure the email service.
+// Configure MailKit email service.
 builder.Services.Configure<EmailSettings>(
     builder.Configuration.GetSection("Email"));
 
 builder.Services.AddScoped<IEmailService, EmailService>();
+
+// Configure Temporal.
+var temporalTargetHost =
+    builder.Configuration["Temporal:TargetHost"]
+    ?? "localhost:7233";
+
+var temporalNamespace =
+    builder.Configuration["Temporal:Namespace"]
+    ?? "default";
+
+var temporalTaskQueue =
+    builder.Configuration["Temporal:TaskQueue"]
+    ?? "task-manager-email";
+
+builder.Services
+    .AddTemporalClient(options =>
+    {
+        options.TargetHost = temporalTargetHost;
+        options.Namespace = temporalNamespace;
+    })
+    .AddHostedTemporalWorker(temporalTaskQueue)
+    .AddWorkflow<EmailWorkflow>()
+    .AddScopedActivities<EmailActivities>();
 
 // Configure Entity Framework Core and SQL Server.
 builder.Services.AddDbContext<TaskManagerContext>(options =>
@@ -92,7 +118,7 @@ app.MapControllers();
 // Health-check endpoint.
 app.MapHealthChecks("/health");
 
-// Root API endpoint.
+// Root endpoint.
 app.MapGet("/", (ILogger<Program> logger) =>
 {
     logger.LogInformation(
@@ -104,7 +130,7 @@ app.MapGet("/", (ILogger<Program> logger) =>
     };
 });
 
-// Test email endpoint.
+// Direct MailKit email endpoint.
 app.MapPost(
     "/api/email/send",
     async (
@@ -128,6 +154,38 @@ app.MapPost(
         return Results.Accepted(value: new
         {
             message = "Email was sent successfully."
+        });
+    });
+
+// Durable Temporal email workflow endpoint.
+app.MapPost(
+    "/api/email/workflow",
+    async (
+        EmailRequest request,
+        ITemporalClient temporalClient) =>
+    {
+        if (string.IsNullOrWhiteSpace(request.Recipient) ||
+            string.IsNullOrWhiteSpace(request.Subject))
+        {
+            return Results.BadRequest(new
+            {
+                message = "Recipient and subject are required."
+            });
+        }
+
+        var workflowId = $"email-{Guid.NewGuid():N}";
+
+        await temporalClient.StartWorkflowAsync(
+            (EmailWorkflow workflow) =>
+                workflow.RunAsync(request),
+            new WorkflowOptions(
+                id: workflowId,
+                taskQueue: temporalTaskQueue));
+
+        return Results.Accepted(value: new
+        {
+            message = "Email workflow started.",
+            workflowId
         });
     });
 

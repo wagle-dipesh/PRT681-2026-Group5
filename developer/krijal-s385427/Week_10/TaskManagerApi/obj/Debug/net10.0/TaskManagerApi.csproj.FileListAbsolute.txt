@@ -177,3 +177,15 @@ C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_
 C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\BouncyCastle.Cryptography.dll
 C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\MailKit.dll
 C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\MimeKit.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\Google.Protobuf.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\NexusRpc.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\Temporalio.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\Temporalio.Extensions.Hosting.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\linux-arm64\native\libtemporalio_sdk_core_c_bridge.so
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\linux-musl-arm64\native\libtemporalio_sdk_core_c_bridge.so
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\linux-musl-x64\native\libtemporalio_sdk_core_c_bridge.so
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\linux-x64\native\libtemporalio_sdk_core_c_bridge.so
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\osx-arm64\native\libtemporalio_sdk_core_c_bridge.dylib
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\osx-x64\native\libtemporalio_sdk_core_c_bridge.dylib
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\win-arm64\native\temporalio_sdk_core_c_bridge.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\runtimes\win-x64\native\temporalio_sdk_core_c_bridge.dll

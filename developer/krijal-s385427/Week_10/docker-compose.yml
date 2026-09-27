@@ -32,6 +32,21 @@ services:
       - "8025:8025"
     restart: unless-stopped
 
+  temporal:
+    image: temporalio/temporal:latest
+    container_name: taskmanager-temporal
+    command:
+      - server
+      - start-dev
+      - --ip
+      - 0.0.0.0
+      - --ui-ip
+      - 0.0.0.0
+    ports:
+      - "7233:7233"
+      - "8233:8233"
+    restart: unless-stopped
+
   api:
     build:
       context: ./TaskManagerApi
@@ -47,12 +62,16 @@ services:
       Email__UseSsl: "false"
       Email__FromName: "Task Manager"
       Email__FromAddress: "taskmanager@example.local"
+      Temporal__TargetHost: "temporal:7233"
+      Temporal__Namespace: "default"
+      Temporal__TaskQueue: "task-manager-email"
     ports:
       - "8081:8080"
     depends_on:
       - sqlserver
       - seq
       - mailpit
+      - temporal
     restart: on-failure
 
 volumes:
