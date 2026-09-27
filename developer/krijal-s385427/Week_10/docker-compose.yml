@@ -11,6 +11,7 @@ services:
     volumes:
       - taskmanager-sql-data:/var/opt/mssql
     restart: unless-stopped
+
   seq:
     image: datalust/seq:latest
     container_name: taskmanager-seq
@@ -23,6 +24,14 @@ services:
       - taskmanager-seq-data:/data
     restart: unless-stopped
 
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: taskmanager-mailpit
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    restart: unless-stopped
+
   api:
     build:
       context: ./TaskManagerApi
@@ -33,11 +42,17 @@ services:
       ASPNETCORE_URLS: "http://+:8080"
       ConnectionStrings__TaskManagerConnection: "Server=sqlserver,1433;Database=TaskManagerDb;User Id=sa;Password=${MSSQL_SA_PASSWORD};TrustServerCertificate=True;Encrypt=False"
       Seq__ServerUrl: "http://seq"
+      Email__Host: "mailpit"
+      Email__Port: "1025"
+      Email__UseSsl: "false"
+      Email__FromName: "Task Manager"
+      Email__FromAddress: "taskmanager@example.local"
     ports:
       - "8081:8080"
     depends_on:
       - sqlserver
       - seq
+      - mailpit
     restart: on-failure
 
 volumes:

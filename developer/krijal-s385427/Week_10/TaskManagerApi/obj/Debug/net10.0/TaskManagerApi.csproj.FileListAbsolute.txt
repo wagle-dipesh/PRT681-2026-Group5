@@ -174,3 +174,6 @@ C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_
 C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
 C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\Serilog.Sinks.File.dll
 C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\Serilog.Sinks.Seq.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\BouncyCastle.Cryptography.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\MailKit.dll
+C:\Users\Krijal Khadka\Desktop\PRT681-2026-Group5\developer\krijal-s385427\Week_10\TaskManagerApi\bin\Debug\net10.0\MimeKit.dll

@@ -2,10 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Serilog;
 using TaskManagerApi.Data;
 using TaskManagerApi.Middleware;
+using TaskManagerApi.Models;
+using TaskManagerApi.Services;
+using TaskManagerApi.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure Serilog and Seq.
+// Configure structured logging with Serilog and Seq.
 builder.Host.UseSerilog((context, services, configuration) =>
 {
     configuration
@@ -23,6 +26,13 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
 
+// Configure the email service.
+builder.Services.Configure<EmailSettings>(
+    builder.Configuration.GetSection("Email"));
+
+builder.Services.AddScoped<IEmailService, EmailService>();
+
+// Configure Entity Framework Core and SQL Server.
 builder.Services.AddDbContext<TaskManagerContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString(
@@ -48,12 +58,13 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Catch and log unhandled exceptions.
+// Handle and log unhandled exceptions.
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
 // Record structured HTTP request logs.
 app.UseSerilogRequestLogging();
 
+// Create the database and Tasks table for a new container.
 using (var scope = app.Services.CreateScope())
 {
     var database = scope.ServiceProvider
@@ -77,8 +88,11 @@ if (app.Environment.IsDevelopment())
 app.UseCors("AllowReactClient");
 
 app.MapControllers();
+
+// Health-check endpoint.
 app.MapHealthChecks("/health");
 
+// Root API endpoint.
 app.MapGet("/", (ILogger<Program> logger) =>
 {
     logger.LogInformation(
@@ -89,5 +103,32 @@ app.MapGet("/", (ILogger<Program> logger) =>
         message = "Task Manager API is running"
     };
 });
+
+// Test email endpoint.
+app.MapPost(
+    "/api/email/send",
+    async (
+        EmailRequest request,
+        IEmailService emailService) =>
+    {
+        if (string.IsNullOrWhiteSpace(request.Recipient) ||
+            string.IsNullOrWhiteSpace(request.Subject))
+        {
+            return Results.BadRequest(new
+            {
+                message = "Recipient and subject are required."
+            });
+        }
+
+        await emailService.SendEmailAsync(
+            request.Recipient,
+            request.Subject,
+            request.Body);
+
+        return Results.Accepted(value: new
+        {
+            message = "Email was sent successfully."
+        });
+    });
 
 app.Run();
