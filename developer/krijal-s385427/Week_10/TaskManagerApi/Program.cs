@@ -1,10 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
 using TaskManagerApi.Data;
+using TaskManagerApi.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configure structured logging.
+// Configure Serilog and Seq.
 builder.Host.UseSerilog((context, services, configuration) =>
 {
     configuration
@@ -20,6 +21,7 @@ builder.Host.UseSerilog((context, services, configuration) =>
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
+builder.Services.AddHealthChecks();
 
 builder.Services.AddDbContext<TaskManagerContext>(options =>
     options.UseSqlServer(
@@ -46,10 +48,12 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// Records structured information about every HTTP request.
+// Catch and log unhandled exceptions.
+app.UseMiddleware<GlobalExceptionMiddleware>();
+
+// Record structured HTTP request logs.
 app.UseSerilogRequestLogging();
 
-// Create the database and Tasks table for a new container.
 using (var scope = app.Services.CreateScope())
 {
     var database = scope.ServiceProvider
@@ -61,16 +65,24 @@ using (var scope = app.Services.CreateScope())
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+
+    // Development-only endpoint for testing exception logging.
+    app.MapGet("/test-error", () =>
+    {
+        throw new InvalidOperationException(
+            "This is a test exception for Seq.");
+    });
 }
 
 app.UseCors("AllowReactClient");
 
 app.MapControllers();
+app.MapHealthChecks("/health");
 
 app.MapGet("/", (ILogger<Program> logger) =>
 {
     logger.LogInformation(
-        "Task Manager API health endpoint was accessed");
+        "Task Manager API root endpoint was accessed");
 
     return new
     {
