@@ -41,21 +41,26 @@ The `api` row should say `(healthy)` - that's the Docker `HEALTHCHECK` we added 
 
 ## Try it
 
-**1. Create an order:**
+**1. Create an order, using Swagger UI (no terminal needed):**
 
-```bash
-curl -X POST http://localhost:8090/api/orders \
-  -H "Content-Type: application/json" \
-  -d "{\"customerName\":\"Alice Nguyen\",\"customerEmail\":\"alice@example.com\",\"product\":\"Wireless Mouse\",\"quantity\":2}"
-```
+1. Open http://localhost:8090/swagger in your browser.
+2. Find **POST /api/orders** and click it to expand, then click **Try it out**.
+3. Replace the example body with:
 
-You get back the order immediately (`202 Accepted`) plus a `workflowId` - the API didn't wait for the email to actually send.
+   ```json
+   {
+     "customerName": "Dipesh Wagle",
+     "customerEmail": "deepacewagle@gmail.com",
+     "product": "Wireless Mouse",
+     "quantity": 2
+   }
+   ```
 
-**2. Check the order a moment later** (swap `1` for the id you got back):
+4. Click **Execute**.
 
-```bash
-curl http://localhost:8090/api/orders/1
-```
+You get back the order immediately (response code `202 Accepted`) plus a `workflowId` - the API didn't wait for the email to actually send. Note the `id` in the response body for the next step.
+
+**2. Check the order a moment later**, also in Swagger: expand **GET /api/orders/{id}**, click **Try it out**, enter the `id` from step 1, and click **Execute**.
 
 `"emailConfirmed": true` means the Temporal workflow's activity successfully sent the email.
 
@@ -89,11 +94,10 @@ That's the "durable execution against network drops" concept from this week's to
 
 ## Code tour
 
-- [`Program.cs`](Week9_ResilientOrdersApi/Program.cs) — wires up Serilog, ElmahCore, health checks, and the `/api/orders` + `/throw` endpoints.
+- [`Program.cs`](Week9_ResilientOrdersApi/Program.cs) — everything is wired up here: Serilog, ElmahCore, health checks, connecting to Temporal and starting its worker, and the `/api/orders` + `/throw` endpoints.
 - [`Models/Order.cs`](Week9_ResilientOrdersApi/Models/Order.cs) — the `Order` model and a simple in-memory `OrderStore` (no database, same approach as previous weeks' practice).
 - [`Workflows/OrderConfirmationWorkflow.cs`](Week9_ResilientOrdersApi/Workflows/OrderConfirmationWorkflow.cs) — the Temporal workflow: calls the email activity with a retry policy.
 - [`Activities/EmailActivities.cs`](Week9_ResilientOrdersApi/Activities/EmailActivities.cs) — the Temporal activity that actually sends the email via MailKit.
-- [`Workflows/TemporalWorkerService.cs`](Week9_ResilientOrdersApi/Workflows/TemporalWorkerService.cs) — a `BackgroundService` that connects to the Temporal server and runs the worker for the lifetime of the API.
 - [`Dockerfile`](Week9_ResilientOrdersApi/Dockerfile) — multi-stage build: `sdk:8.0-alpine` to build, `aspnet:8.0-alpine` to run, with `curl` added just for the `HEALTHCHECK`.
 - [`docker-compose.yml`](docker-compose.yml) — the API plus its three supporting services (Seq, Temporal, smtp4dev).
 

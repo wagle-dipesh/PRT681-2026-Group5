@@ -18,19 +18,19 @@ services:
     image: datalust/seq:latest
     environment:
       - ACCEPT_EULA=Y
-      - SEQ_FIRSTRUN_NOAUTHENTICATION=true # local demo only - skips creating an admin login
+      - SEQ_FIRSTRUN_NOAUTHENTICATION=true # skip admin login for local dev
     ports:
-      - "5341:80" # Seq web UI + log ingestion: http://localhost:5341
+      - "5341:80" # Seq UI: http://localhost:5341
 
   temporal:
     image: temporalio/temporal:latest
     command: server start-dev --ip 0.0.0.0
     ports:
-      - "7233:7233" # gRPC, used by the API to talk to Temporal
-      - "8233:8233" # Temporal Web UI: http://localhost:8233
+      - "7233:7233" # gRPC port, used by the API
+      - "8233:8233" # Temporal UI: http://localhost:8233
 
   smtp4dev:
     image: rnwood/smtp4dev:latest
     ports:
-      - "5000:80" # smtp4dev web UI (view "sent" emails): http://localhost:5000
-      - "2525:25" # SMTP port the API sends mail to
+      - "5000:80" # smtp4dev UI: http://localhost:5000
+      - "2525:25" # SMTP port

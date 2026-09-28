@@ -1,6 +1,6 @@
 namespace Week9_ResilientOrdersApi.Models;
 
-// A simple class representing one order. Kept in memory for this practice project.
+// one order, kept in memory (no database)
 public class Order
 {
     public int Id { get; set; }
@@ -10,11 +10,10 @@ public class Order
     public int Quantity { get; set; }
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;
 
-    // Set to true once the Temporal workflow reports the confirmation email was sent.
-    public bool EmailConfirmed { get; set; }
+    public bool EmailConfirmed { get; set; } // set true once the workflow sends the email
 }
 
-// What the client sends us in POST /api/orders.
+// the request body for POST /api/orders
 public class OrderRequest
 {
     public string CustomerName { get; set; } = "";
@@ -23,7 +22,7 @@ public class OrderRequest
     public int Quantity { get; set; }
 }
 
-// A simple in-memory "database" for orders, shared across requests.
+// in-memory list of orders shared across requests
 public class OrderStore
 {
     private readonly List<Order> _orders = new();

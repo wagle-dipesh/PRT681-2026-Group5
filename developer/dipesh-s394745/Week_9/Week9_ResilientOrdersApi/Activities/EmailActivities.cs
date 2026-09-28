@@ -7,10 +7,7 @@ using Week9_ResilientOrdersApi.Workflows;
 
 namespace Week9_ResilientOrdersApi.Activities;
 
-// The "Activity" is the part of a Temporal workflow that is allowed to do
-// real-world, possibly-flaky work - like talking to an SMTP server over the
-// network. If it throws, Temporal will retry it according to the workflow's
-// retry policy, instead of losing the whole order.
+// the activity that actually sends the email, called from OrderConfirmationWorkflow
 public class EmailActivities
 {
     private readonly IConfiguration _config;
