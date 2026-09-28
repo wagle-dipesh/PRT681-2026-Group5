@@ -1,0 +1,36 @@
+services:
+  api:
+    build:
+      context: ./Week9_ResilientOrdersApi
+    ports:
+      - "8090:8080"
+    environment:
+      - Seq__ServerUrl=http://seq:80
+      - Temporal__HostPort=temporal:7233
+      - Smtp__Host=smtp4dev
+      - Smtp__Port=25
+    depends_on:
+      - seq
+      - temporal
+      - smtp4dev
+
+  seq:
+    image: datalust/seq:latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_FIRSTRUN_NOAUTHENTICATION=true # local demo only - skips creating an admin login
+    ports:
+      - "5341:80" # Seq web UI + log ingestion: http://localhost:5341
+
+  temporal:
+    image: temporalio/temporal:latest
+    command: server start-dev --ip 0.0.0.0
+    ports:
+      - "7233:7233" # gRPC, used by the API to talk to Temporal
+      - "8233:8233" # Temporal Web UI: http://localhost:8233
+
+  smtp4dev:
+    image: rnwood/smtp4dev:latest
+    ports:
+      - "5000:80" # smtp4dev web UI (view "sent" emails): http://localhost:5000
+      - "2525:25" # SMTP port the API sends mail to
